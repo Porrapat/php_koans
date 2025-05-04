@@ -8,6 +8,15 @@ Testing is essential in your quest to learn and do great things in PHP.
 
 > _This project is inspired by Ruby Koans._
 
+## Inspiration Repos
+
+The following repositories inspired this project:
+
+- [Ruby Koans](https://github.com/edgecase/ruby_koans)
+- [Python Koans](https://github.com/gregmalcolm/python_koans)
+- [PHP Koans](https://github.com/akoebbe/php_koans.git)  
+  > This PHP Koans is my inspiration one.
+  
 ---
 
 ## Installing PHP
