@@ -1,5 +1,5 @@
 {
-    "name": "porrapat/php-koans",
+    "name": "porrapat/php_koans",
     "type": "project",
     "license": "MIT",
     "autoload": {
