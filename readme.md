@@ -39,9 +39,9 @@ php path_to_enlightenment.php
 
 ### Other Stuff
 
-**Author**: Porrapat Petchdamrongskul <<porrapat.cpe20@gmail.com>>
-**Powered by**: GeeGee a.k.a ChatGPT 😄
-**Issue Tracker**: [GitHub Issues](https://github.com/Porrapat/php_koans/issues)
+**Author**: Porrapat Petchdamrongskul <<porrapat.cpe20@gmail.com>>  
+**Powered by**: GeeGee a.k.a ChatGPT 😄  
+**Issue Tracker**: [GitHub Issues](https://github.com/Porrapat/php_koans/issues)  
 **Requirements**: PHP 7.4.x or later and Composer (any recent version)
 
 ---
