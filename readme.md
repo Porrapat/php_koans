@@ -1,0 +1,38 @@
+# PHP Koans
+
+The **PHP Koans** walk you along the path to enlightenment in order to learn PHP.  
+The goal is to learn the PHP language, syntax, structure, and some common functions and libraries.  
+We also teach you culture by basing the koans on tests.  
+Testing is not just something we pay lip service to, but something we live.  
+Testing is essential in your quest to learn and do great things in PHP.
+
+> _This project is inspired by Ruby Koans._
+
+---
+
+## Installing PHP
+
+If you do not have PHP and Composer set up, please visit [php.net](https://www.php.net) for OS-specific installation instructions.  
+To run the koans, you need **PHP** and **Composer** installed.
+
+To verify your installation:
+
+### On Unix/Linux/macOS (from any terminal window):
+
+```bash
+php -v
+composer --version
+```
+
+### On Windows (from any terminal window):
+
+```bash
+php -v
+composer --version
+```
+
+### Get Started:
+
+```bash
+php path_to_enlightenment.php
+```
