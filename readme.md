@@ -42,6 +42,8 @@ composer --version
 
 ### Get Started:
 
+Look at phpunit.xml and then uncomment each test. You can start from `AboutAssertsTest`
+
 ```bash
 php path_to_enlightenment.php
 ```
