@@ -4,7 +4,9 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite name="PHP Koans">
-            <directory>./koans</directory>
+            <file>koans/00_AboutAssertsTest.php</file>
+            <file>koans/01_AboutStringsTest.php</file>
+            <file>koans/02_AboutVariablesTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
