@@ -12,26 +12,29 @@ class AboutTrueAndFalseTest extends TestCase
 {
     public function testTrueIsTreatedAsTrue()
     {
-        $this->assertEquals(true, true);
+        $this->assertEquals(__, true);
     }
 
     public function testFalseIsTreatedAsFalse()
     {
-        $this->assertEquals(false, false);
+        $this->assertEquals(__, false);
     }
 
     public function testNullIsTreatedAsFalseToo()
     {
-        $this->assertEquals(false, null);
+        $this->assertEquals(__, null);
     }
 
-    // public function testEverythingElseIsTreatedAsTrue()
-    // {
-    //     $this->assertEquals(true, 1);
-    //     $this->assertEquals(false, 0);
-    //     $this->assertEquals(__, []);
-    //     $this->assertEquals(__, new \stdClass());
-    //     $this->assertEquals(__, "Strings");
-    //     $this->assertEquals(__, "");
-    // }
+    public function testEverythingElseIsTreatedAsTrue()
+    {
+        $this->assertEquals(__, 1);
+        $this->assertEquals(__, "Strings");
+        
+    }
+
+    public function testTheseAreFalse()
+    {
+        $this->assertEquals(__, 0);
+        $this->assertEquals(__, "");
+    }
 }
