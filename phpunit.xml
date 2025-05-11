@@ -4,11 +4,11 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite name="PHP Koans">
-            <!-- <file>koans/00_AboutAssertsTest.php</file> -->
-            <!-- <file>koans/00_AboutTrueAndFalse.php</file> -->
-            <!-- <file>koans/01_AboutStringsTest.php</file> -->
-            <!-- <file>koans/02_AboutVariablesTest.php</file> -->
-            <!-- <file>koans/02_AboutControlStatementsTest.php</file> -->
+            <file>koans/AboutAssertsTest.php</file>
+            <file>koans/AboutTrueAndFalse.php</file>
+            <file>koans/AboutStringsTest.php</file>
+            <file>koans/AboutVariablesTest.php</file>
+            <file>koans/AboutControlStatementsTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
