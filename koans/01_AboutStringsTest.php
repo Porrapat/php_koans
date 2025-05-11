@@ -13,32 +13,32 @@ class AboutStringsTest extends TestCase
     public function testDoubleQuotedStringsAreStrings()
     {
         $string = "Hello, World";
-        $this->assertEquals(true, is_string($string));
+        $this->assertEquals(__, is_string($string));
     }
 
     public function testSingleQuotedStringsAreAlsoStrings()
     {
         $string = 'Goodbye, World';
-        $this->assertEquals(true, is_string($string));
+        $this->assertEquals(__, is_string($string));
     }
 
     public function testUseSingleQuotesToCreateStringWithDoubleQuotes()
     {
         $string = 'He said, "Go Away."';
-        $this->assertEquals('He said, "Go Away."', $string);
+        $this->assertEquals(__, $string);
     }
 
     public function testUseDoubleQuotesToCreateStringsWithSingleQuotes()
     {
         $string = "Don't";
-        $this->assertEquals("Don't", $string);
+        $this->assertEquals(__, $string);
     }
 
     public function testUseBackslashForThoseHardCases()
     {
         $a = "He said, \"Don't\"";
         $b = 'He said, "Don\'t"';
-        $this->assertEquals(true, $a === $b);
+        $this->assertEquals(__, $a === $b);
     }
 
     public function testUseFlexibleQuotingToHandleReallyHardCases()
@@ -47,10 +47,9 @@ class AboutStringsTest extends TestCase
 flexible quotes can handle both ' and " characters
 STR;
         $b = "flexible quotes can handle both ' and \" characters";
-        $c = 'flexible quotes c
-        an handle both \' and " characters';
-        $this->assertEquals(true, $a === $b);
-        $this->assertEquals(false, $a === $c);
+        $c = 'flexible quotes can handle both \' and " characters';
+        $this->assertEquals(__, $a === $b);
+        $this->assertEquals(__, $a === $c);
     }
 
     public function testFlexibleQuotesCanHandleMultipleLines()
@@ -60,9 +59,9 @@ It was the best of times,
 It was the worst of times.
 
 TEXT;
-        $this->assertEquals(55, strlen($longString));
-        $this->assertEquals(2, substr_count($longString, "\n"));
-        $this->assertEquals("I", substr($longString, 0, 1));
+        $this->assertEquals(__, strlen($longString));
+        $this->assertEquals(__, substr_count($longString, "\n"));
+        $this->assertEquals(__, substr($longString, 0, 1));
     }
 
     public function testHereDocumentsCanAlsoHandleMultipleLines()
@@ -71,15 +70,15 @@ TEXT;
 It was the best of times,
 It was the worst of times.
 EOS;
-        $this->assertEquals(53, strlen($longString));
-        $this->assertEquals(1, substr_count($longString, "\n"));
-        $this->assertEquals("I", substr($longString, 0, 1));
+        $this->assertEquals(__, strlen($longString));
+        $this->assertEquals(__, substr_count($longString, "\n"));
+        $this->assertEquals(__, substr($longString, 0, 1));
     }
 
     public function testDotWillConcatenateTwoStrings()
     {
         $string = "Hello, " . "World";
-        $this->assertEquals('Hello, World', $string);
+        $this->assertEquals(__, $string);
     }
 
     public function testDotConcatenationWillLeaveTheOriginalStringsUnmodified()
@@ -87,8 +86,8 @@ EOS;
         $hi = "Hello, ";
         $there = "World";
         $string = $hi . $there;
-        $this->assertEquals("Hello, ", $hi);
-        $this->assertEquals("World", $there);
+        $this->assertEquals(__, $hi);
+        $this->assertEquals(__, $there);
     }
 
     public function testDotEqualsWillConcatenateToTheEndOfAString()
@@ -96,7 +95,7 @@ EOS;
         $hi = "Hello, ";
         $there = "World";
         $hi .= $there;
-        $this->assertEquals('Hello, World', $hi);
+        $this->assertEquals(__, $hi);
     }
 
     public function testDotEqualsLeavesOriginalReferenceUnmodified()
@@ -104,78 +103,78 @@ EOS;
         $original = "Hello, ";
         $hi = $original;
         $hi .= "World";
-        $this->assertEquals("Hello, ", $original);
+        $this->assertEquals(__, $original);
     }
 
     public function testDoubleQuotedStringInterpretEscapeCharacters()
     {
         $string = "\n";
-        $this->assertEquals(1, strlen($string));
+        $this->assertEquals(__, strlen($string));
     }
 
     public function testSingleQuotedStringDoNotInterpretEscapeCharacters()
     {
         $string = '\n';
-        $this->assertEquals(2, strlen($string));
+        $this->assertEquals(__, strlen($string));
     }
 
     public function testSingleQuotesSometimesInterpretEscapeCharacters()
     {
         $string = '\\\'';
-        $this->assertEquals(2, strlen($string));
-        $this->assertEquals("\'", $string);
+        $this->assertEquals(__, strlen($string));
+        $this->assertEquals(__, $string);
     }
 
     public function testDoubleQuotedStringsInterpolateVariables()
     {
         $value = 123;
         $string = "The value is $value";
-        $this->assertEquals('The value is 123', $string);
+        $this->assertEquals(__, $string);
     }
 
     public function testSingleQuotedStringsDoNotInterpolate()
     {
         $value = 123;
         $string = 'The value is $value';
-        $this->assertEquals('The value is $value', $string);
+        $this->assertEquals(__, $string);
     }
 
     public function testAnyExpressionMayBeInterpolated()
     {
         $string = "The square root of 5 is " . sqrt(5);
-        $this->assertEquals('The square root of 5 is 2.2360679774998', $string);
+        $this->assertEquals(__, $string);
     }
 
     public function testYouCanGetASubstringFromAString()
     {
         $string = "Bacon, lettuce and tomato";
-        $this->assertEquals('let', substr($string, 7, 3));
+        $this->assertEquals(__, substr($string, 7, 3));
     }
 
     public function testYouCanGetASingleCharacterFromAString()
     {
         $string = "Bacon, lettuce and tomato";
-        $this->assertEquals('a', $string[1]);
+        $this->assertEquals(__, $string[1]);
     }
 
     public function testStringsCanBeSplit()
     {
         $string = "Sausage Egg Cheese";
         $words = explode(" ", $string);
-        $this->assertEquals(['Sausage', 'Egg', 'Cheese'], $words);
+        $this->assertEquals([__, __, __], $words);
     }
 
     public function testStringsCanBeSplitWithDifferentPatterns()
     {
         $string = "the:rain:in:thailand";
         $words = preg_split('/:/', $string);
-        $this->assertEquals(['the', 'rain', 'in', 'thailand'], $words);
+        $this->assertEquals([__, __, __, __], $words);
     }
 
     public function testStringsCanBeJoined()
     {
         $words = ["Now", "is", "the", "time"];
-        $this->assertEquals('Now is the time', implode(" ", $words));
+        $this->assertEquals(__, implode(" ", $words));
     }
 
     public function testStringsAreUniqueObjects()
@@ -183,7 +182,7 @@ EOS;
         $a = "a string";
         $b = "a string";
 
-        $this->assertEquals(true, $a == $b);
-        $this->assertEquals(true, spl_object_id((object) $a) == spl_object_id((object) $b));
+        $this->assertEquals(__, $a == $b);
+        $this->assertEquals(__, spl_object_id((object) $a) == spl_object_id((object) $b));
     }
 }
