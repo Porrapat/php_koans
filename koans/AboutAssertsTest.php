@@ -14,19 +14,19 @@ class AboutAssertsTest extends TestCase
     // We shall contemplate truth by testing reality, via asserts.
     public function test_assert_truth()
     {
-        $this->assertTrue(false);  // This should be true
+        $this->assertTrue(true);  // This should be true
     }
 
     // Enlightenment may be more easily achieved with appropriate messages.
     public function test_assert_with_message()
     {
-        $this->assertTrue(false, "This should be true -- Please fix this");
+        $this->assertTrue(true, "This should be true -- Please fix this");
     }
 
     // To understand reality, we must compare our expectations against reality.
     public function test_assert_equality()
     {
-        $expectedValue = __;
+        $expectedValue = 2;
         $actualValue = 1 + 1;
 
         $this->assertTrue($expectedValue == $actualValue);
@@ -35,7 +35,7 @@ class AboutAssertsTest extends TestCase
     // Some ways of asserting equality are better than others.
     public function test_a_better_way_of_asserting_equality()
     {
-        $expectedValue = __;
+        $expectedValue = 2;
         $actualValue = 1 + 1;
 
         $this->assertEquals($expectedValue, $actualValue);
@@ -44,6 +44,6 @@ class AboutAssertsTest extends TestCase
     // Sometimes we will ask you to fill in the values
     public function test_fill_in_values()
     {
-        $this->assertEquals(__, 1 + 1);
+        $this->assertEquals(2, 1 + 1);
     }
 }
