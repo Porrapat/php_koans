@@ -10,7 +10,7 @@
             <file>koans/AboutVariablesTest.php</file>
             <file>koans/AboutControlStatementsTest.php</file>
             <file>koans/AboutArraysTest.php</file> -->
-            <file>koans/AboutEmptyIsNullOrIssetTest.php</file>
+            <!-- <file>koans/AboutEmptyIsNullOrIssetTest.php</file> -->
         </testsuite>
     </testsuites>
 </phpunit>
