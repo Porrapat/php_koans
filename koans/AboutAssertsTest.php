@@ -46,4 +46,29 @@ class AboutAssertsTest extends TestCase
     {
         $this->assertEquals(2, 1 + 1);
     }
+
+    // Sometimes we need to know the variable type.
+    public function testSometimesWeNeedToKnowTheVariableType()
+    {
+        $this->assertEquals("__", gettype("What am I"));
+    }
+
+    // Sometimes we need to know the class type.
+    public function testSometimesWeNeedToKnowTheClassType()
+    {
+        // See bottom of this file for class definition
+        $object = new Enlightenment();
+
+        $this->assertEquals(__, get_class($object));
+    }
 }
+
+/**
+ * Empty class for testThatSometimesWeNeedToKnowTheClassType()
+ */
+class Enlightenment {
+    /**
+     * Important: This class is within the PhpKoans namespace.
+     * That means that the FQCN ("fully qualified class name") starts with "PhpKoans\"
+     */
+};
