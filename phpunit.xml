@@ -8,8 +8,9 @@
             <file>koans/AboutTrueAndFalseTest.php</file>
             <file>koans/AboutStringsTest.php</file>
             <file>koans/AboutVariablesTest.php</file>
-            <file>koans/AboutControlStatementsTest.php</file> -->
-            <file>koans/AboutArraysTest.php</file>
+            <file>koans/AboutControlStatementsTest.php</file>
+            <file>koans/AboutArraysTest.php</file> -->
+            <file>koans/AboutEmptyIsNullOrIssetTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
