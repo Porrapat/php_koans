@@ -45,6 +45,7 @@ composer --version
 Look at phpunit.xml and then uncomment each test. You can start from `AboutAssertsTest`
 
 ```bash
+composer install
 php path_to_enlightenment.php
 ```
 
