@@ -68,7 +68,7 @@ class AboutAssertsTest extends TestCase
  */
 class Enlightenment {
     /**
-     * Important: This class is within the PhpKoans namespace.
-     * That means that the FQCN ("fully qualified class name") starts with "PhpKoans\"
+     * Important: This class is within the Koans namespace.
+     * That means that the FQCN ("fully qualified class name") starts with "Koans\"
      */
 };
