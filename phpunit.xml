@@ -11,6 +11,8 @@
             <file>koans/AboutControlStatementsTest.php</file>
             <file>koans/AboutArraysTest.php</file> -->
             <!-- <file>koans/AboutEmptyIsNullOrIssetTest.php</file> -->
+            <file>koans/StringKoans.php</file>
+            <file>koans/StringManipulationKoans.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
