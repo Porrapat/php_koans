@@ -9,6 +9,7 @@
             <file>koans/AboutStringsTest.php</file>
             <file>koans/AboutVariablesTest.php</file>
             <file>koans/AboutControlStatementsTest.php</file> -->
+            <file>koans/AboutArraysTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
