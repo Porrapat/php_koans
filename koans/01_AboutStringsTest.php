@@ -65,144 +65,125 @@ TEXT;
         $this->assertEquals("I", substr($longString, 0, 1));
     }
 
-//     public function testHereDocumentsCanAlsoHandleMultipleLines()
-//     {
-//         $longString = <<<EOS
-// It was the best of times,
-// It was the worst of times.
-// EOS;
-//         $this->assertEquals(__, strlen($longString));
-//         $this->assertEquals(__, substr_count($longString, "\n"));
-//         $this->assertEquals(__, substr($longString, 0, 1));
-//     }
+    public function testHereDocumentsCanAlsoHandleMultipleLines()
+    {
+        $longString = <<<EOS
+It was the best of times,
+It was the worst of times.
+EOS;
+        $this->assertEquals(53, strlen($longString));
+        $this->assertEquals(1, substr_count($longString, "\n"));
+        $this->assertEquals("I", substr($longString, 0, 1));
+    }
 
-//     public function testPlusWillConcatenateTwoStrings()
-//     {
-//         $string = "Hello, " . "World";
-//         $this->assertEquals(__, $string);
-//     }
+    public function testDotWillConcatenateTwoStrings()
+    {
+        $string = "Hello, " . "World";
+        $this->assertEquals('Hello, World', $string);
+    }
 
-//     public function testPlusConcatenationWillLeaveTheOriginalStringsUnmodified()
-//     {
-//         $hi = "Hello, ";
-//         $there = "World";
-//         $string = $hi . $there;
-//         $this->assertEquals(__, $hi);
-//         $this->assertEquals(__, $there);
-//     }
+    public function testDotConcatenationWillLeaveTheOriginalStringsUnmodified()
+    {
+        $hi = "Hello, ";
+        $there = "World";
+        $string = $hi . $there;
+        $this->assertEquals("Hello, ", $hi);
+        $this->assertEquals("World", $there);
+    }
 
-//     public function testDotEqualsWillConcatenateToTheEndOfAString()
-//     {
-//         $hi = "Hello, ";
-//         $there = "World";
-//         $hi .= $there;
-//         $this->assertEquals(__, $hi);
-//     }
+    public function testDotEqualsWillConcatenateToTheEndOfAString()
+    {
+        $hi = "Hello, ";
+        $there = "World";
+        $hi .= $there;
+        $this->assertEquals('Hello, World', $hi);
+    }
 
-//     public function testDotEqualsLeavesOriginalReferenceUnmodified()
-//     {
-//         $original = "Hello, ";
-//         $hi = $original;
-//         $hi .= "World";
-//         $this->assertEquals(__, $original);
-//     }
+    public function testDotEqualsLeavesOriginalReferenceUnmodified()
+    {
+        $original = "Hello, ";
+        $hi = $original;
+        $hi .= "World";
+        $this->assertEquals("Hello, ", $original);
+    }
 
-//     public function testDoubleQuotedStringInterpretEscapeCharacters()
-//     {
-//         $string = "\n";
-//         $this->assertEquals(__, strlen($string));
-//     }
+    public function testDoubleQuotedStringInterpretEscapeCharacters()
+    {
+        $string = "\n";
+        $this->assertEquals(1, strlen($string));
+    }
 
-//     public function testSingleQuotedStringDoNotInterpretEscapeCharacters()
-//     {
-//         $string = '\n';
-//         $this->assertEquals(__, strlen($string));
-//     }
+    public function testSingleQuotedStringDoNotInterpretEscapeCharacters()
+    {
+        $string = '\n';
+        $this->assertEquals(2, strlen($string));
+    }
 
-//     public function testSingleQuotesSometimesInterpretEscapeCharacters()
-//     {
-//         $string = '\\\'';
-//         $this->assertEquals(__, strlen($string));
-//         $this->assertEquals(__, $string);
-//     }
+    public function testSingleQuotesSometimesInterpretEscapeCharacters()
+    {
+        $string = '\\\'';
+        $this->assertEquals(2, strlen($string));
+        $this->assertEquals("\'", $string);
+    }
 
-//     public function testDoubleQuotedStringsInterpolateVariables()
-//     {
-//         $value = 123;
-//         $string = "The value is $value";
-//         $this->assertEquals(__, $string);
-//     }
+    public function testDoubleQuotedStringsInterpolateVariables()
+    {
+        $value = 123;
+        $string = "The value is $value";
+        $this->assertEquals('The value is 123', $string);
+    }
 
-//     public function testSingleQuotedStringsDoNotInterpolate()
-//     {
-//         $value = 123;
-//         $string = 'The value is $value';
-//         $this->assertEquals(__, $string);
-//     }
+    public function testSingleQuotedStringsDoNotInterpolate()
+    {
+        $value = 123;
+        $string = 'The value is $value';
+        $this->assertEquals('The value is $value', $string);
+    }
 
-//     public function testAnyExpressionMayBeInterpolated()
-//     {
-//         $string = "The square root of 5 is " . sqrt(5);
-//         $this->assertEquals(__, $string);
-//     }
+    public function testAnyExpressionMayBeInterpolated()
+    {
+        $string = "The square root of 5 is " . sqrt(5);
+        $this->assertEquals('The square root of 5 is 2.2360679774998', $string);
+    }
 
-//     public function testYouCanGetASubstringFromAString()
-//     {
-//         $string = "Bacon, lettuce and tomato";
-//         $this->assertEquals(__, substr($string, 7, 3));
-//         $this->assertEquals(__, substr($string, 7, 3)); // PHP has no native `7..9` style
-//     }
+    public function testYouCanGetASubstringFromAString()
+    {
+        $string = "Bacon, lettuce and tomato";
+        $this->assertEquals('let', substr($string, 7, 3));
+    }
 
-//     public function testYouCanGetASingleCharacterFromAString()
-//     {
-//         $string = "Bacon, lettuce and tomato";
-//         $this->assertEquals(__, $string[1]);
-//     }
+    public function testYouCanGetASingleCharacterFromAString()
+    {
+        $string = "Bacon, lettuce and tomato";
+        $this->assertEquals('a', $string[1]);
+    }
 
-//     public function testStringsCanBeSplit()
-//     {
-//         $string = "Sausage Egg Cheese";
-//         $words = explode(" ", $string);
-//         $this->assertEquals([__, __, __], $words);
-//     }
+    public function testStringsCanBeSplit()
+    {
+        $string = "Sausage Egg Cheese";
+        $words = explode(" ", $string);
+        $this->assertEquals(['Sausage', 'Egg', 'Cheese'], $words);
+    }
 
-//     public function testStringsCanBeSplitWithDifferentPatterns()
-//     {
-//         $string = "the:rain:in:spain";
-//         $words = preg_split('/:/', $string);
-//         $this->assertEquals([__, __, __, __], $words);
-//     }
+    public function testStringsCanBeSplitWithDifferentPatterns()
+    {
+        $string = "the:rain:in:thailand";
+        $words = preg_split('/:/', $string);
+        $this->assertEquals(['the', 'rain', 'in', 'thailand'], $words);
+    }
 
-//     public function testStringsCanBeJoined()
-//     {
-//         $words = ["Now", "is", "the", "time"];
-//         $this->assertEquals(__, implode(" ", $words));
-//     }
+    public function testStringsCanBeJoined()
+    {
+        $words = ["Now", "is", "the", "time"];
+        $this->assertEquals('Now is the time', implode(" ", $words));
+    }
 
-//     public function testStringsAreUniqueObjects()
-//     {
-//         $a = "a string";
-//         $b = "a string";
+    public function testStringsAreUniqueObjects()
+    {
+        $a = "a string";
+        $b = "a string";
 
-//         $this->assertEquals(__, $a == $b);
-//         $this->assertEquals(__, spl_object_id((object) $a) == spl_object_id((object) $b));
-//     }
-
-    // public function test_string_assignment()
-    // {
-    //     $str = 'Hello';
-    //     $this->assertEquals(__, $str);
-    // }
-
-    // public function test_string_concatenation()
-    // {
-    //     $str = 'Hello ' . 'World';
-    //     $this->assertEquals(__, $str);
-    // }
-
-    // public function test_string_interpolation()
-    // {
-    //     $name = 'Porrapat';
-    //     $this->assertEquals(__, "Hello $name");
-    // }
+        $this->assertEquals(true, $a == $b);
+        $this->assertEquals(true, spl_object_id((object) $a) == spl_object_id((object) $b));
+    }
 }
