@@ -8,4 +8,4 @@ $phpunit = $isWindows
     ? 'vendor\bin\phpunit.bat'
     : './vendor/bin/phpunit';
 
-passthru($phpunit);
+passthru($phpunit. ' --colors=always');
