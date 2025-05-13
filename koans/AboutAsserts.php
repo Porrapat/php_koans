@@ -4,10 +4,14 @@ namespace Koans;
 
 use PHPUnit\Framework\TestCase;
 
-// Placeholder constant used for learners to fill in
-if (!defined('__')) {
-    define('__', null);
-}
+// // Placeholder constant used for learners to fill in
+// if (!defined('__')) {
+//     define('__', null);
+// }
+
+// define('__', new \KoansLib\KoanIncomplete());
+define('__', 'FILL_ME_IN');
+// define('__', '__INCOMPLETE__');
 
 class AboutAsserts extends TestCase
 {
@@ -17,7 +21,7 @@ class AboutAsserts extends TestCase
     public function testAssertTruth()
     {
         // Change "false" to "true"
-        $this->assertTrue(false);  // This should be true
+        $this->assertTrue(true);  // This should be true
     }
 
     /**
