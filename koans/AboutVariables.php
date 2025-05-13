@@ -4,14 +4,20 @@ namespace Koans;
 
 use PHPUnit\Framework\TestCase;
 
-class AboutVariablesTest extends TestCase
+class AboutVariables extends TestCase
 {
+    /**
+     * @testdox This is string variable
+     */
     public function testAssigningVariables()
     {
         $value = "I am a string";
         $this->assertEquals(__, $value);
     }
 
+    /**
+     * @testdox This is int variable
+     */
     public function testIntegerValues()
     {
         $number = 42;
