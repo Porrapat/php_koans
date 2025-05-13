@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php"
+<phpunit bootstrap="bootstrap.php"
          printerClass="KoansLib\KoanPrinter"
          colors="true"
          stopOnFailure="true">
     <testsuites>
         <testsuite name="PHP Koans">
-            <!-- <file>koansSolutions/AboutAsserts.php</file> -->
+            <file>koansSolutions/AboutAsserts.php</file>
 
 
 
 
-            <file>koans/AboutAsserts.php</file>
+            <!-- <file>koans/AboutAsserts.php</file> -->
             <!-- <file>koans/AssertKoan.php</file> -->
             <!-- <file>koans/AboutAssertsTest.php</file> 
             <file>koans/AboutTrueAndFalseTest.php</file>

@@ -4,11 +4,6 @@ namespace Koans;
 
 use PHPUnit\Framework\TestCase;
 
-// Placeholder constant used for learners to fill in
-if (!defined('__')) {
-    define('__', null);
-}
-
 class AboutAsserts extends TestCase
 {
     /**
