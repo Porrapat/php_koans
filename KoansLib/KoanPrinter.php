@@ -16,7 +16,6 @@ class KoanPrinter extends CliTestDoxPrinter
     public function printResult(TestResult $result): void
     {
         $this->printHeader($result);
-
         $this->printFooter($result);
     }
 
@@ -32,7 +31,6 @@ class KoanPrinter extends CliTestDoxPrinter
                 'fg-black, bg-yellow',
                 'No tests executed!'
             );
-
             return;
         }
 

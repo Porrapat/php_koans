@@ -9,57 +9,73 @@ if (!defined('__')) {
     define('__', null);
 }
 
-class AboutAssertsTest extends TestCase
+class AboutAsserts extends TestCase
 {
-    // We shall contemplate truth by testing reality, via asserts.
+    /**
+     * @testdox We shall contemplate truth by testing reality, via asserts.
+     */
     public function testAssertTruth()
     {
-        $this->assertTrue(__);  // This should be true
+        // Change "false" to "true"
+        $this->assertTrue(true);  // This should be true
     }
 
-    // Enlightenment may be more easily achieved with appropriate messages.
+    /**
+     * @testdox Enlightenment may be more easily achieved with appropriate messages.
+     */
     public function testAssertWithMessage()
     {
-        $this->assertTrue(__, "This should be true -- Please fix this");
+        $this->assertTrue(true, "This should be true -- Please fix this");
     }
 
-    // To understand reality, we must compare our expectations against reality.
+    /**
+     * @testdox To understand reality, we must compare our expectations against reality.
+     */
     public function testAssertEquality()
     {
         $expectedValue = 2;
         $actualValue = 1 + 1;
 
-        $this->assertTrue(__ == $actualValue);
+        $this->assertTrue(2 == $actualValue);
     }
 
-    // Some ways of asserting equality are better than others.
+    /**
+     * @testdox Some ways of asserting equality are better than others.
+     */
     public function testABetterWayOfAssertingEquality()
     {
         $expectedValue = 2;
         $actualValue = 1 + 1;
 
-        $this->assertEquals(__, $actualValue);
+        $this->assertEquals(2, $actualValue);
     }
 
-    // Sometimes we will ask you to fill in the values
+    /**
+     * @testdox Sometimes we will ask you to fill in the values
+     */
     public function testFillInValues()
     {
         $this->assertEquals(2, 1 + 1);
     }
 
-    // Sometimes we need to know the variable type.
+    /**
+     * @testdox Sometimes we need to know the variable type.
+     */
     public function testSometimesWeNeedToKnowTheVariableType()
     {
-        $this->assertEquals(__, gettype("What am I"));
+        // Must be string like 'string'
+        $this->assertEquals('string', gettype("What am I"));
     }
 
-    // Sometimes we need to know the class type.
+    /**
+     * @testdox Sometimes we need to know the class type.
+     */
     public function testSometimesWeNeedToKnowTheClassType()
     {
         // See bottom of this file for class definition
         $object = new Enlightenment();
 
-        $this->assertEquals(__, get_class($object));
+        $this->assertEquals('Koans\Enlightenment', get_class($object));
     }
 }
 
