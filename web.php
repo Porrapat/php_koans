@@ -1,34 +1,61 @@
 <?php
-// web.php — fancy Koan test runner for browser
+// web.php — full version with test details tracked correctly
 
 require __DIR__ . '/vendor/autoload.php';
 
+use PHPUnit\Framework\TestResult;
+use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\TextUI\TestRunner;
-use PHPUnit\TextUI\DefaultResultPrinter;
-use PHPUnit\Framework\TestResult;
 
-// Capture output
-ob_start();
+class WebTestListener implements PHPUnit\Framework\TestListener {
+    public array $passed = [];
+    public array $failed = [];
+    public array $errored = [];
 
-// Prepare the test suite
+    public function addError(PHPUnit\Framework\Test $test, \Throwable $t, float $time): void {
+        $this->errored[] = ['test' => $test, 'message' => $t->getMessage()];
+    }
+
+    public function addFailure(PHPUnit\Framework\Test $test, PHPUnit\Framework\AssertionFailedError $e, float $time): void {
+        $this->failed[] = ['test' => $test, 'message' => $e->getMessage()];
+    }
+
+    public function endTest(PHPUnit\Framework\Test $test, float $time): void {
+        $name = $test->getName();
+        if (!in_array($name, array_map(fn($f) => $f['test']->getName(), $this->failed)) &&
+            !in_array($name, array_map(fn($e) => $e['test']->getName(), $this->errored))) {
+            $this->passed[] = $test;
+        }
+    }
+
+    // Unused methods required by the interface
+    public function addWarning(PHPUnit\Framework\Test $test, PHPUnit\Framework\Warning $e, float $time): void {}
+    public function addIncompleteTest(PHPUnit\Framework\Test $test, \Throwable $t, float $time): void {}
+    public function addRiskyTest(PHPUnit\Framework\Test $test, \Throwable $t, float $time): void {}
+    public function addSkippedTest(PHPUnit\Framework\Test $test, \Throwable $t, float $time): void {}
+    public function startTest(PHPUnit\Framework\Test $test): void {}
+    public function startTestSuite(PHPUnit\Framework\TestSuite $suite): void {}
+    public function endTestSuite(PHPUnit\Framework\TestSuite $suite): void {}
+}
+
+
+// Create test suite
 $suite = new TestSuite();
-$suite->addTestFile(__DIR__ . '/koans/AboutAsserts.php'); // Add more as needed
-$suite->addTestFile(__DIR__ . '/koansSolutions/AboutVariables.php'); // Add more as needed
-$suite->addTestFile(__DIR__ . '/koansSolutions/AboutTrueAndFalse.php'); // Add more as needed
+$suite->addTestFile(__DIR__ . '/koans/AboutAsserts.php');
 
+// Set up listener and result tracking
+$listener = new WebTestListener();
 $result = new TestResult();
+$result->addListener($listener);
 $suite->run($result);
 
 $summary = [
     'total' => $result->count(),
-    'failures' => count($result->failures()),
-    'errors' => count($result->errors()),
-    'skipped' => count($result->skipped()),
-    'passed' => $result->wasSuccessful() ? $result->count() : $result->count() - count($result->failures()) - count($result->errors()) - count($result->skipped()),
+    'failures' => count($listener->failed),
+    'errors' => count($listener->errored),
+    'passed' => count($listener->passed),
 ];
-
-ob_end_clean();
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +66,8 @@ ob_end_clean();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { padding: 2rem; background-color: #f9f9f9; }
-    .result-card { max-width: 600px; margin: auto; }
+    .result-card { max-width: 700px; margin: auto; }
+    .test-details { max-height: 400px; overflow-y: auto; margin-top: 1rem; }
   </style>
 </head>
 <body>
@@ -53,7 +81,6 @@ ob_end_clean();
       <p class="card-text">
         <span class="badge bg-primary">Total: <?= $summary['total'] ?></span>
         <span class="badge bg-success">Passed: <?= $summary['passed'] ?></span>
-        <span class="badge bg-warning text-dark">Skipped: <?= $summary['skipped'] ?></span>
         <span class="badge bg-danger">Failures: <?= $summary['failures'] ?></span>
         <span class="badge bg-danger">Errors: <?= $summary['errors'] ?></span>
       </p>
@@ -67,6 +94,28 @@ ob_end_clean();
           All tests passed. You are enlightened. 🌟
         </div>
       <?php endif; ?>
+
+      <hr>
+      <h5 class="mt-4">Test Details</h5>
+      <ul class="list-group text-start test-details">
+        <?php foreach ($listener->passed as $test): ?>
+          <li class="list-group-item list-group-item-success">✅ <?= htmlspecialchars($test->getName()) ?></li>
+        <?php endforeach; ?>
+
+        <?php foreach ($listener->failed as $fail): ?>
+          <li class="list-group-item list-group-item-danger">
+            ❌ <?= htmlspecialchars($fail['test']->getName()) ?>
+            <br><small class="text-muted"><?= nl2br(htmlspecialchars($fail['message'])) ?></small>
+          </li>
+        <?php endforeach; ?>
+
+        <?php foreach ($listener->errored as $err): ?>
+          <li class="list-group-item list-group-item-warning">
+            💥 <?= htmlspecialchars($err['test']->getName()) ?>
+            <br><small class="text-muted"><?= nl2br(htmlspecialchars($err['message'])) ?></small>
+          </li>
+        <?php endforeach; ?>
+      </ul>
     </div>
   </div>
 
