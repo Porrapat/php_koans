@@ -50,7 +50,7 @@ class AboutAsserts extends TestCase
      */
     public function testFillInValues()
     {
-        $this->assertEquals(2, 1 + 1);
+        $this->assertEquals(__, 1 + 1);
     }
 
     /**

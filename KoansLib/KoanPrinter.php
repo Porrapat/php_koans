@@ -21,7 +21,9 @@ class KoanPrinter extends CliTestDoxPrinter
 
     protected function printHeader($result): void
     {
-        $this->write("\n\n");
+        if (\count($result) !== 0) {
+            $this->write("\n\n");
+        }
     }
 
     protected function printFooter(TestResult $result): void

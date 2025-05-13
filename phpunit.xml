@@ -2,13 +2,13 @@
 <phpunit bootstrap="bootstrap.php"
          printerClass="KoansLib\KoanPrinter"
          colors="true"
-         stopOnFailure="true">
+         stopOnFailure="false">
     <testsuites>
         <testsuite name="PHP Koans">
 
-            <!-- <file>koans/AboutAsserts.php</file> -->
-            <!-- <file>koans/AboutVariables.php</file> -->
-            <!-- <file>koans/AboutTrueAndFalse.php</file> -->
+            <file>koans/AboutAsserts.php</file> 
+            <file>koans/AboutVariables.php</file>
+            <file>koans/AboutTrueAndFalse.php</file>
 
             <!-- <file>koans/AssertKoan.php</file> -->
             <!-- <file>koans/AboutAssertsTest.php</file> 
@@ -22,8 +22,7 @@
 
             <!-- <file>koansSolutions/AboutAsserts.php</file> -->
             <!-- <file>koansSolutions/AboutVariables.php</file> -->
-            <file>koansSolutions/AboutTrueAndFalse.php</file>
-
+            <!-- <file>koansSolutions/AboutTrueAndFalse.php</file> -->
 
         </testsuite>
     </testsuites>

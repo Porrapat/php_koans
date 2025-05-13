@@ -8,7 +8,7 @@ class AboutTrueAndFalseTest extends TestCase
 {
     public function testTrueIsTreatedAsTrue()
     {
-        $this->assertEquals(__, true);
+        $this->assertEquals(____, true);
     }
 
     public function testFalseIsTreatedAsFalse()
