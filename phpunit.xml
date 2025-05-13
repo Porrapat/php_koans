@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php"
+<phpunit bootstrap="bootstrap.php"
+         printerClass="KoansLib\KoanPrinter"
          colors="true"
          stopOnFailure="false">
     <testsuites>
@@ -10,6 +11,12 @@
             <!-- <file>koans/AboutVariablesTest.php</file> -->
             <!-- <file>koans/AboutControlStatementsTest.php</file> -->
             <!-- <file>koans/AboutArraysTest.php</file> -->
+
+            <!-- <file>koansSolutions/AboutAsserts.php</file> -->
+            <!-- <file>koansSolutions/AboutVariables.php</file> -->
+            <!-- <file>koansSolutions/AboutTrueAndFalse.php</file> -->
+            <!-- <file>koansSolutions/AboutControlStatements.php</file> -->
+
         </testsuite>
     </testsuites>
 </phpunit>

@@ -4,15 +4,11 @@ namespace Koans;
 
 use PHPUnit\Framework\TestCase;
 
-if (!defined('__')) {
-    define('__', null); // Placeholder for Koans
-}
-
 class AboutTrueAndFalseTest extends TestCase
 {
     public function testTrueIsTreatedAsTrue()
     {
-        $this->assertEquals(__, true);
+        $this->assertEquals(____, true);
     }
 
     public function testFalseIsTreatedAsFalse()

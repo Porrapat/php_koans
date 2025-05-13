@@ -4,11 +4,7 @@ namespace Koans;
 
 use PHPUnit\Framework\TestCase;
 
-if (!defined('__')) {
-    define('__', null); // Placeholder for Koans
-}
-
-class AboutControlStatementsTest extends TestCase
+class AboutControlStatements extends TestCase
 {
     public function testIfThenElseStatements()
     {
