@@ -14,8 +14,8 @@ The following repositories inspired this project:
 
 - [Ruby Koans](https://github.com/edgecase/ruby_koans)
 - [Python Koans](https://github.com/gregmalcolm/python_koans)
-- [PHP Koans](https://github.com/akoebbe/php_koans.git)  
-  > This PHP Koans is my inspiration one.
+- [PHP Koans (by Akoebbe)](https://github.com/akoebbe/php_koans.git)
+- [PHP Koans (by IvanSolaDelgado)](https://github.com/540/php_koans.git)
   
 ---
 
