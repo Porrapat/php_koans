@@ -8,10 +8,10 @@
 
             <!-- <file>koans/AboutAsserts.php</file> -->
             <!-- <file>koans/AboutVariables.php</file> -->
+            <!-- <file>koans/AboutTrueAndFalse.php</file> -->
 
             <!-- <file>koans/AssertKoan.php</file> -->
             <!-- <file>koans/AboutAssertsTest.php</file> 
-            <file>koans/AboutTrueAndFalseTest.php</file>
             <file>koans/AboutStringsTest.php</file>
             <file>koans/AboutVariablesTest.php</file>
             <file>koans/AboutControlStatementsTest.php</file>
@@ -21,8 +21,8 @@
             <!-- <file>koans/StringManipulationKoans.php</file> -->
 
             <!-- <file>koansSolutions/AboutAsserts.php</file> -->
-            <file>koansSolutions/AboutVariables.php</file>
-
+            <!-- <file>koansSolutions/AboutVariables.php</file> -->
+            <file>koansSolutions/AboutTrueAndFalse.php</file>
 
 
         </testsuite>
