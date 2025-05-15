@@ -4,11 +4,7 @@ namespace Koans;
 
 use PHPUnit\Framework\TestCase;
 
-if (!defined('__')) {
-    define('__', null); // Placeholder for Koans
-}
-
-class AboutArraysTest extends TestCase
+class AboutArrays extends TestCase
 {
     public function testCreatingArrays()
     {
