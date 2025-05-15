@@ -4,11 +4,7 @@ namespace Koans;
 
 use PHPUnit\Framework\TestCase;
 
-if (!defined('__')) {
-    define('__', null); // Placeholder for Koans
-}
-
-class AboutEmptyIsNullOrIssetTest extends TestCase
+class AboutEmptyIsNullOrIsset extends TestCase
 {
     function testWorkingWithIsNull()
     {
@@ -27,7 +23,6 @@ class AboutEmptyIsNullOrIssetTest extends TestCase
         $this->assertEquals(__ , isset($array['bar']));
         $this->assertEquals(__ , isset($array['foo']));
         $this->assertEquals(__ , isset($array['barfoo']));
-
     }
 
     function testWorkingWithEmpty()
@@ -54,9 +49,7 @@ class AboutEmptyIsNullOrIssetTest extends TestCase
 
         // Working with objects
         $this->assertEquals(__, empty((object)array()));
-        $this->assertEquals(__, empty(null));
-        $this->assertEquals(__, empty($something));
+        $this->assertEquals(____, empty(null));
+        $this->assertEquals(____, empty($something));
     }
 }
-
-?>
