@@ -12,10 +12,12 @@
             <!-- <file>koans/AboutStrings.php</file> -->
             <!-- <file>koans/AboutArrays.php</file>  -->
             <!-- <file>koans/AboutEmptyIsNullOrIsset.php</file> -->
-
-            <!-- <file>koans/StringKoans.php</file> -->
-            <!-- <file>koans/StringManipulationKoans.php</file> -->
-
+            <!-- <file>koans/AboutCallbackFunctions.php</file> -->
+            <!-- <file>koans/AboutClasses.php</file> -->
+            <!-- <file>koans/AboutDataTypes.php</file> -->
+            <!-- <file>koans/AboutExceptions.php</file> -->
+            <!-- <file>koans/AboutFunctions.php</file> -->
+            <!-- <file>koans/AboutRegularExpressions.php</file> -->
 
 
             <!-- <file>koansSolutions/AboutAsserts.php</file> -->
@@ -25,6 +27,12 @@
             <!-- <file>koansSolutions/AboutStrings.php</file> -->
             <!-- <file>koansSolutions/AboutArrays.php</file>  -->
             <!-- <file>koansSolutions/AboutEmptyIsNullOrIsset.php</file> -->
+            <!-- <file>koansSolutions/AboutCallbackFunctions.php</file> -->
+            <!-- <file>koansSolutions/AboutClasses.php</file> -->
+            <!-- <file>koansSolutions/AboutDataTypes.php</file> -->
+            <!-- <file>koansSolutions/AboutExceptions.php</file> -->
+            <!-- <file>koansSolutions/AboutFunctions.php</file> -->
+            <!-- <file>koansSolutions/AboutRegularExpressions.php</file> -->
         </testsuite>
     </testsuites>
 </phpunit>
