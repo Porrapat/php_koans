@@ -6,21 +6,33 @@ use PHPUnit\Framework\TestCase;
 
 class AboutTrueAndFalseTest extends TestCase
 {
+    /**
+     * @testdox true is treated as true
+     */
     public function testTrueIsTreatedAsTrue()
     {
         $this->assertEquals(true, true);
     }
 
+    /**
+     * @testdox false is treated as false
+     */
     public function testFalseIsTreatedAsFalse()
     {
         $this->assertEquals(false, false);
     }
 
+    /**
+     * @testdox null is treated as false too
+     */
     public function testNullIsTreatedAsFalseToo()
     {
         $this->assertEquals(false, null);
     }
 
+    /**
+     * @testdox most other values like 1 and strings are treated as true
+     */
     public function testEverythingElseIsTreatedAsTrue()
     {
         $this->assertEquals(true, 1);
@@ -28,6 +40,9 @@ class AboutTrueAndFalseTest extends TestCase
         
     }
 
+    /**
+     * @testdox 0 and empty string are also treated as false
+     */
     public function testTheseAreFalse()
     {
         $this->assertEquals(false, 0);

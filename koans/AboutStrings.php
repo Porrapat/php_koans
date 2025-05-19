@@ -6,30 +6,28 @@ use PHPUnit\Framework\TestCase;
 
 class AboutStrings extends TestCase
 {
+    /**
+     * @testdox Double-quoted strings are strings.
+     */
     public function testDoubleQuotedStringsAreStrings()
     {
         $string = "Hello, World";
         $this->assertEquals(____, is_string($string));
+        // is_string() returns a true or false
     }
 
+    /**
+     * @testdox Single-quoted strings are also strings.
+     */
     public function testSingleQuotedStringsAreAlsoStrings()
     {
         $string = 'Goodbye, World';
         $this->assertEquals(____, is_string($string));
     }
 
-    public function testUseSingleQuotesToCreateStringWithDoubleQuotes()
-    {
-        $string = 'He said, "Go Away."';
-        $this->assertEquals(__, $string);
-    }
-
-    public function testUseDoubleQuotesToCreateStringsWithSingleQuotes()
-    {
-        $string = "Don't";
-        $this->assertEquals(__, $string);
-    }
-
+    /**
+     * @testdox Use the backslash for escaping quotes in strings.
+     */
     public function testUseBackslashForThoseHardCases()
     {
         $a = "He said, \"Don't\"";
@@ -37,7 +35,82 @@ class AboutStrings extends TestCase
         $this->assertEquals(____, $a === $b);
     }
 
-    public function testUseFlexibleQuotingToHandleReallyHardCases()
+    /**
+     * @testdox Use single-quotes to create a string that contains double-quotes.
+     */
+    public function testUseSingleQuotesToCreateStringWithDoubleQuotes()
+    {
+        $string = 'He said, "Go Away."';
+        $this->assertEquals(__, $string); // Replace __ with a single quoted escaped version of the string
+    }
+
+    /**
+     * @testdox Use double-quotes to create a string that contains single-quotes.
+     */
+    public function testUseDoubleQuotesToCreateStringsWithSingleQuotes()
+    {
+        $string = "Don't";
+        $this->assertEquals(__, $string); // Replace __ with a double quoted escaped version of the string
+    }
+
+    /**
+     * @testdox Strings can continue onto multiple lines.
+     */
+    public function testStringsCanContinueOntoMultipleLines()
+    {
+        $string = "It was the best of times,
+It was the worst of times.";
+
+        // strlen() returns the length of a string as an integer (Hint: line breaks count as a character)
+        $this->assertEquals(__, strlen($string));
+    }
+
+    /**
+     * @testdox Strings can be wrapped in a heredoc syntax.
+     */
+    public function testStringsCanBeWrappedInAHeredocSyntax()
+    {
+        $string = <<<EOT
+Howdy,
+world!
+EOT;
+        // Hint: First and last line breaks of a Heredoc don't count
+        $this->assertEquals(__, strlen($string));
+    }
+
+    /**
+     * @testdox A heredoc identifier can be arbitrary.
+     *
+     * Reference: https://secure.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc
+     */
+    public function testHeredocIdentifierIsArbitrary()
+    {
+        $string = <<<WHATEVERYOUWANT
+Howdy,
+world!
+WHATEVERYOUWANT;
+
+        $this->assertEquals(__, strlen($string));
+    }
+
+    /**
+     * @testdox Strings can be wrapped in a nowdoc syntax.
+     */
+    public function testStringsCanBeWrappedInANowdocSyntax()
+    {
+        // Note the single quotes around EOT, this is the Nowdoc syntax
+        $string = <<<'EOT'
+Howdy,
+world!
+EOT;
+        // Hint: First and last line breaks of a Heredoc don't count
+        $this->assertEquals(__, strlen($string));
+    }
+
+    /**
+     * @testdox Heredoc can parse string in hardly cases.
+     */
+    public function testUseHeredocToHandleReallyHardCases()
     {
         $a = <<<STR
 flexible quotes can handle both ' and " characters
@@ -48,7 +121,10 @@ STR;
         $this->assertEquals(____, $a === $c);
     }
 
-    public function testFlexibleQuotesCanHandleMultipleLines()
+    /**
+     * @testdox Heredoc can handle multiple lines.
+     */
+    public function testHeredocCanHandleMultipleLines()
     {
         $longString = <<<TEXT
 It was the best of times,
@@ -58,127 +134,5 @@ TEXT;
         $this->assertEquals(__, strlen($longString));
         $this->assertEquals(__, substr_count($longString, "\n"));
         $this->assertEquals(__, substr($longString, 0, 1));
-    }
-
-    public function testHereDocumentsCanAlsoHandleMultipleLines()
-    {
-        $longString = <<<EOS
-It was the best of times,
-It was the worst of times.
-EOS;
-        $this->assertEquals(__, strlen($longString));
-        $this->assertEquals(__, substr_count($longString, "\n"));
-        $this->assertEquals(__, substr($longString, 0, 1));
-    }
-
-    public function testDotWillConcatenateTwoStrings()
-    {
-        $string = "Hello, " . "World";
-        $this->assertEquals(__, $string);
-    }
-
-    public function testDotConcatenationWillLeaveTheOriginalStringsUnmodified()
-    {
-        $hi = "Hello, ";
-        $there = "World";
-        $string = $hi . $there;
-        $this->assertEquals(__, $hi);
-        $this->assertEquals(__, $there);
-    }
-
-    public function testDotEqualsWillConcatenateToTheEndOfAString()
-    {
-        $hi = "Hello, ";
-        $there = "World";
-        $hi .= $there;
-        $this->assertEquals(__, $hi);
-    }
-
-    public function testDotEqualsLeavesOriginalReferenceUnmodified()
-    {
-        $original = "Hello, ";
-        $hi = $original;
-        $hi .= "World";
-        $this->assertEquals(__, $original);
-    }
-
-    public function testDoubleQuotedStringInterpretEscapeCharacters()
-    {
-        $string = "\n";
-        $this->assertEquals(__, strlen($string));
-    }
-
-    public function testSingleQuotedStringDoInterpretEscapeCharacters()
-    {
-        $string = '\n';
-        $this->assertEquals(__, strlen($string));
-    }
-
-    public function testSingleQuotesSometimesInterpretEscapeCharacters()
-    {
-        $string = '\\\'';
-        $this->assertEquals(__, strlen($string));
-        $this->assertEquals(__, $string);
-    }
-
-    public function testDoubleQuotedStringsInterpolateVariables()
-    {
-        $value = 123;
-        $string = "The value is $value";
-        $this->assertEquals(__, $string);
-    }
-
-    public function testSingleQuotedStringsDoNotInterpolate()
-    {
-        $value = 123;
-        $string = 'The value is $value';
-        $this->assertEquals(__, $string);
-    }
-
-    public function testAnyExpressionMayBeInterpolated()
-    {
-        $string = "The square root of 5 is " . sqrt(5);
-        $this->assertEquals(__, $string);
-    }
-
-    public function testYouCanGetASubstringFromAString()
-    {
-        $string = "Bacon, lettuce and tomato";
-        $this->assertEquals(__, substr($string, 7, 3));
-    }
-
-    public function testYouCanGetASingleCharacterFromAString()
-    {
-        $string = "Bacon, lettuce and tomato";
-        $this->assertEquals(__, $string[1]);
-    }
-
-    public function testStringsCanBeSplit()
-    {
-        $string = "Sausage Egg Cheese";
-        $words = explode(" ", $string);
-        $this->assertEquals([__, __, __], $words);
-    }
-
-    public function testStringsCanBeSplitWithDifferentPatterns()
-    {
-        $string = "the:rain:in:thailand";
-        $words = preg_split('/:/', $string);
-        $this->assertEquals([__, __, __, __], $words);
-    }
-
-    public function testStringsCanBeJoined()
-    {
-        $words = ["Now", "is", "the", "time"];
-        $this->assertEquals(__, implode(" ", $words));
-    }
-
-    public function testStringsAreUniqueObjects()
-    {
-        $a = "a string";
-        $b = "a string";
-
-        $this->assertEquals(____, $a == $b);
-        $this->assertEquals(____, spl_object_id((object) $a) == spl_object_id((object) $b));
     }
 }

@@ -8,13 +8,7 @@ use Koans\koansResources\Classes\ExampleClass;
 use Koans\koansResources\Classes\SportCar;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @SuppressWarnings(PHPMD.TooManyPublicMethods)
- * @SuppressWarnings(PHPMD.StaticAccess)
- */
-
 // Resources for learning about Classes and Objects => https://www.w3schools.com/php/php_oop_classes_objects.asp
-
 class AboutClasses extends TestCase
 {
     /**

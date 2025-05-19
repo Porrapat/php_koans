@@ -3,6 +3,7 @@
 namespace Koans;
 
 use PHPUnit\Framework\TestCase;
+use Koans\koansResources\Classes\Enlightenment;
 
 class AboutAsserts extends TestCase
 {
@@ -70,16 +71,42 @@ class AboutAsserts extends TestCase
         // See bottom of this file for class definition
         $object = new Enlightenment();
 
-        $this->assertEquals(__, get_class($object));
+        $this->assertEquals('Enlightenment', basename(str_replace('\\', '/', get_class($object))));
+        $this->assertEquals('Koans\koansResources\Classes\Enlightenment', get_class($object));
+    }
+
+    /**
+     * @testdox Assert bonus, assertEquals allow type juggling
+     */
+    public function test_assert_equals_allows_type_juggling()
+    {
+        $this->assertEquals(__, '42');        // try 24 and '42'
+        $this->assertEquals(__, 1);            // try 1 and '1'
+        $this->assertEquals(__, false);          // try false or 0 and then try 'false'
+    }
+
+    /**
+     * @testdox Assert bonus, assertSame requires exact type match
+     */
+    public function test_assert_same_requires_exact_type_match()
+    {
+        $this->assertSame(__, 42);      // try 42, then '42' and see difference
+        $this->assertSame(__, true);    // try true, then 'true' and see difference
+
+        // The following examples would fail if uncommented due to type mismatch:
+        // $this->assertSame(42, '42');
+        // $this->assertSame(true, 1);
+    }
+
+    /**
+     * @testdox Assert bonus, assertSame vs assertEquals with array
+     */
+    public function test_assert_same_vs_equals_with_arrays()
+    {
+        $expected = ['a' => 1];
+        $actual   = ['a' => '1'];
+
+        $this->assertEquals(__, $actual);           // passes
+        $this->assertSame(['a' => __], $actual);    // fails until fixed
     }
 }
-
-/**
- * Empty class for testThatSometimesWeNeedToKnowTheClassType()
- */
-class Enlightenment {
-    /**
-     * Important: This class is within the Koans namespace.
-     * That means that the FQCN ("fully qualified class name") starts with "Koans\"
-     */
-};

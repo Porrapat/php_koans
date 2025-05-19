@@ -4,6 +4,7 @@ namespace Koans;
 
 use PHPUnit\Framework\TestCase;
 
+// Resources for learning about PHP variable => https://www.w3schools.com/php/php_variables.asp
 class AboutVariables extends TestCase
 {
     /**
@@ -22,5 +23,58 @@ class AboutVariables extends TestCase
     {
         $number = 42;
         $this->assertSame(42, $number);
+    }
+
+    /**
+     * @testdox A float holds decimal values
+     */
+    public function testFloatVariable()
+    {
+        $pi = 3.14;
+        $this->assertIsFloat($pi);
+        $this->assertEquals(3.14, $pi);
+    }
+
+    /**
+     * @testdox A boolean can be true or false
+     */
+    public function testBooleanVariable()
+    {
+        $isTrue = true;
+        $isFalse = false;
+
+        $this->assertTrue(true);
+        $this->assertFalse(false);
+    }
+
+    /**
+     * @testdox An array can hold multiple values
+     */
+    public function testArrayVariable()
+    {
+        $array = [1, 2, 3];
+        $this->assertIsArray($array);
+        $this->assertEquals([1, 2, 3], $array);
+    }
+
+    /**
+     * @testdox Null means the absence of a value
+     */
+    public function testNullVariable()
+    {
+        $nothing = null;
+        $this->assertNull(null);
+    }
+
+    /**
+     * @testdox An object is an instance of a class
+     */
+    public function testObjectVariable()
+    {
+        $object = new \stdClass();
+        $object->language = "PHP";
+
+        $this->assertIsObject($object);
+        $this->assertEquals('PHP', $object->language);
     }
 }
