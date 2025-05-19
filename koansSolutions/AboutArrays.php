@@ -6,6 +6,9 @@ use PHPUnit\Framework\TestCase;
 
 class AboutArrays extends TestCase
 {
+    /**
+     * @testdox Creating an empty array results in an array type with zero elements
+     */
     public function testCreatingArrays()
     {
         $emptyArray = [];
@@ -13,6 +16,9 @@ class AboutArrays extends TestCase
         $this->assertEquals(0, count($emptyArray));   // Hint: 0
     }
 
+    /**
+     * @testdox Array literals grow as you assign values or append with []
+     */
     public function testArrayLiterals()
     {
         $array = [];
@@ -28,6 +34,9 @@ class AboutArrays extends TestCase
         $this->assertEquals([1, 2, 333], $array); // Hint: [1, 2, 333]
     }
 
+    /**
+     * @testdox Array elements can be accessed using numeric indices or helper functions like reset and end
+     */
     public function testAccessingArrayElements()
     {
         $array = ['peanut', 'butter', 'and', 'jelly'];
@@ -40,6 +49,9 @@ class AboutArrays extends TestCase
         $this->assertEquals('butter', $array[1]);           // Hint: 'butter'
     }
 
+    /**
+     * @testdox Arrays can be sliced using array_slice with start and length parameters
+     */
     public function testSlicingArrays()
     {
         $array = ['peanut', 'butter', 'and', 'jelly'];
@@ -53,6 +65,9 @@ class AboutArrays extends TestCase
         $this->assertEquals([], array_slice($array, 5, 0));   // Hint: []
     }
 
+    /**
+     * @testdox Arrays can be created using range() and support numeric sequences
+     */
     public function testArraysAndRanges()
     {
         $range = range(1, 5);
@@ -62,6 +77,9 @@ class AboutArrays extends TestCase
         $this->assertEquals([1, 2, 3, 4], range(1, 4));      // Hint: [1, 2, 3, 4]
     }
 
+    /**
+     * @testdox Slicing can be combined with ranges to extract parts of arrays
+     */
     public function testSlicingWithRanges()
     {
         $array = ['peanut', 'butter', 'and', 'jelly'];
@@ -71,6 +89,9 @@ class AboutArrays extends TestCase
         $this->assertEquals(['and', 'jelly'], array_slice($array, 2));      // Hint: ['and', 'jelly']
     }
 
+    /**
+     * @testdox Values can be pushed and popped from the end of an array
+     */
     public function testPushingAndPoppingArrays()
     {
         $array = [1, 2];
@@ -83,6 +104,9 @@ class AboutArrays extends TestCase
         $this->assertEquals([1, 2], $array);       // Hint: [1, 2]
     }
 
+    /**
+     * @testdox Values can be unshifted and shifted from the beginning of an array
+     */
     public function testShiftingArrays()
     {
         $array = [1, 2];

@@ -6,6 +6,9 @@ use PHPUnit\Framework\TestCase;
 
 class AboutEmptyIsNullOrIsset extends TestCase
 {
+    /**
+     * @testdox is_null returns true only for null values
+     */
     function testWorkingWithIsNull()
     {
         // is_null return true if variable is null
@@ -13,6 +16,9 @@ class AboutEmptyIsNullOrIsset extends TestCase
         $this->assertEquals(false, is_null(""));
     }
 
+    /**
+     * @testdox isset returns true only for variables that are set and not null
+     */
     function testWorkingWithIsset()
     {
         // isset return true if variable exist and it is not null
@@ -25,6 +31,9 @@ class AboutEmptyIsNullOrIsset extends TestCase
         $this->assertEquals(false , isset($array['barfoo']));
     }
 
+    /**
+     * @testdox empty identifies values considered "empty" in PHP
+     */
     function testWorkingWithEmpty()
     {
         // Working with numbers
