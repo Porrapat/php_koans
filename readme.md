@@ -21,19 +21,12 @@ The following repositories inspired this project:
 
 ## Installing PHP
 
-If you do not have PHP and Composer set up, please visit [php.net](https://www.php.net) for OS-specific installation instructions.  
+If you do not have **PHP** and **Composer** set up, please visit [php.net](https://www.php.net) for OS-specific installation instructions.  
 To run the koans, you need **PHP** and **Composer** installed.
 
 To verify your installation:
 
-### On Unix/Linux/macOS (from any terminal window):
-
-```bash
-php -v
-composer --version
-```
-
-### On Windows (from any terminal window):
+### On Unix/Linux/macOS/Windows (from any terminal window):
 
 ```bash
 php -v
@@ -42,12 +35,34 @@ composer --version
 
 ### Get Started:
 
-Look at phpunit.xml and then uncomment each test. You can start from `AboutAsserts`
+Look at phpunit.xml and then uncomment each test. You can start from `AboutAsserts`. These images below shows how to do it.
 
 ```bash
+git clone https://github.com/Porrapat/php_koans.git
+cd php_koans
 composer install
 php path_to_enlightenment.php
 ```
+
+1. Setup Koans
+
+![img1.png](screenshots/01_installing_php_koans.png)
+
+2. Config Koans
+
+![img2.png](screenshots/02_configuration_php_koans.png)
+
+3. Run Koans
+
+![img3.png](screenshots/03_first_run_koans.png)
+
+4. Do Koans
+
+![img4.png](screenshots/04_fix_things_disrupt_your_mind.png)
+
+5. Review Koans
+
+![img5.png](screenshots/05_run_koans_again.png)
 
 ### Other Stuff
 
