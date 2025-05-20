@@ -16,5 +16,8 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^9.0"
+    },
+    "scripts": {
+        "test": "php path_to_enlightenment.php"
     }
 }

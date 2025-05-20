@@ -8,6 +8,11 @@ Testing is essential in your quest to learn and do great things in PHP.
 
 > _This project is inspired by Ruby Koans._
 
+## 🌐 Available Languages
+
+- 🇺🇸 [English](readme.md)
+- 🇹🇭 [ภาษาไทย](readme_th.md)
+
 ## Inspiration Repos
 
 The following repositories inspired this project:
@@ -72,6 +77,14 @@ php path_to_enlightenment.php
 **Requirements**: PHP 7.4.x or later and Composer (any recent version)
 
 ---
+
+### Other Command To Run Koans
+
+```bash
+composer test       # modern PHP style
+php artisan test    # Laravel-style
+php spark test      # CodeIgniter 4-style
+```
 
 ### License
 
