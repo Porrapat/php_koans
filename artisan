@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+$command = $argv[1] ?? null;
+
+switch ($command) {
+    case 'test':
+        require __DIR__ . '/path_to_enlightenment.php';
+        break;
+    default:
+        echo "Available commands:\n";
+        echo "  test     Run PHP Koans\n";
+        break;
+}

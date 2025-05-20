@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+$command = $argv[1] ?? null;
+
+switch ($command) {
+    case 'test':
+        require __DIR__ . '/path_to_enlightenment.php';
+        break;
+    default:
+        echo "PHP Koans Spark\n";
+        echo "Available commands:\n";
+        echo "  test       Run the Koans (path_to_enlightenment.php)\n";
+        break;
+}
