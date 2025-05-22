@@ -48,8 +48,9 @@
             <!-- <file>koansSolutions/AboutNamespaceTest.php</file> -->
             <!-- <file>koansSolutions/AboutClassMethodTest.php</file> -->
             <!-- <file>koansSolutions/AboutNamedArgumentsTest.php</file> -->
-            <!-- <file>koansSolutions/AboutDateTime.php</file> -->
-            <file>koansSolutions/AboutPDO.php</file>
+            <file>koansSolutions/AboutDateTime.php</file>
+            <!-- <file>koansSolutions/AboutPDO.php</file> -->
+            <!-- <file>koansSolutions/AboutInheritanceChatGPT.php</file> -->
         </testsuite>
     </testsuites>
 </phpunit>
