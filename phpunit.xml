@@ -48,6 +48,9 @@
             <!-- <file>koansSolutions/AboutObjects.php</file> -->
 
             <!-- <file>koansSolutions/AboutNull.php</file> -->
+            <!-- <file>koansSolutions/AboutNamespaceTest.php</file> -->
+            <!-- <file>koansSolutions/AboutClassMethodTest.php</file> -->
+            <!-- <file>koansSolutions/AboutNamedArgumentsTest.php</file> -->
         </testsuite>
     </testsuites>
 </phpunit>
