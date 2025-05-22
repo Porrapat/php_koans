@@ -12,13 +12,18 @@
             <!-- <file>koans/AboutStrings.php</file> -->
             <!-- <file>koans/AboutStringManipulation.php</file> -->
             <!-- <file>koans/AboutArrays.php</file>  -->
+            <!-- <file>koans/AboutArrayAssignment.php</file> -->
+            <!-- <file>koans/AboutAssociativeArray.php</file> -->
             <!-- <file>koans/AboutEmptyIsNullOrIsset.php</file> -->
             <!-- <file>koans/AboutCallbackFunctions.php</file> -->
             <!-- <file>koans/AboutClasses.php</file> -->
+            <!-- <file>koans/AboutObjects.php</file> -->
+            <!-- <file>koans/AboutNull.php</file> -->
             <!-- <file>koans/AboutDataTypes.php</file> -->
             <!-- <file>koans/AboutExceptions.php</file> -->
             <!-- <file>koans/AboutFunctions.php</file> -->
             <!-- <file>koans/AboutRegularExpressions.php</file> -->
+
 
 
             <!-- <file>koansSolutions/AboutAsserts.php</file> -->
@@ -28,9 +33,13 @@
             <!-- <file>koansSolutions/AboutStrings.php</file> -->
             <!-- <file>koansSolutions/AboutStringManipulation.php</file> -->
             <!-- <file>koansSolutions/AboutArrays.php</file>  -->
+            <!-- <file>koansSolutions/AboutArrayAssignment.php</file> -->
+            <!-- <file>koansSolutions/AboutAssociativeArray.php</file> -->
             <!-- <file>koansSolutions/AboutEmptyIsNullOrIsset.php</file> -->
             <!-- <file>koansSolutions/AboutCallbackFunctions.php</file> -->
             <!-- <file>koansSolutions/AboutClasses.php</file> -->
+            <!-- <file>koansSolutions/AboutObjects.php</file> -->
+            <!-- <file>koansSolutions/AboutNull.php</file> -->
             <!-- <file>koansSolutions/AboutDataTypes.php</file> -->
             <!-- <file>koansSolutions/AboutExceptions.php</file> -->
             <!-- <file>koansSolutions/AboutFunctions.php</file> -->
