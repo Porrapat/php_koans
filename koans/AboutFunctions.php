@@ -13,7 +13,7 @@ class AboutFunctions extends TestCase
      */
     public function usesFunctionKeywordToDefineFunctions()
     {
-        function sayHello(): string
+        function sayHello() 
         {
             return 'Hello, world!';
         }
@@ -41,7 +41,7 @@ class AboutFunctions extends TestCase
      */
     public function usesDefaultArgumentsValues()
     {
-        function greet($name = 'Guest'): string
+        function greet($name = 'Guest') 
         {
             return 'Hello, ' . $name . '!';
         }

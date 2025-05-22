@@ -36,8 +36,6 @@ class AboutTrueAndFalseTest extends TestCase
     public function testEverythingElseIsTreatedAsTrue()
     {
         $this->assertEquals(true, 1);
-        $this->assertEquals(true, "Strings");
-        
     }
 
     /**

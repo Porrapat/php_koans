@@ -14,7 +14,7 @@ class AboutCallbackFunctions extends TestCase
      */
     public function invokesCallbackFunction()
     {
-        $callback = function ($name): string {
+        $callback = function ($name)  {
             return 'Hello, ' . $name . '!';
         };
 
@@ -31,10 +31,10 @@ class AboutCallbackFunctions extends TestCase
      */
     public function acceptsFunctionAsArgument()
     {
-        $callback = function ($name, $greetingFunction): string {
+        $callback = function ($name, $greetingFunction)  {
             return $greetingFunction($name);
         };
-        $greeting = function ($name): string {
+        $greeting = function ($name)  {
             return 'Hello, ' . $name . '!';
         };
 

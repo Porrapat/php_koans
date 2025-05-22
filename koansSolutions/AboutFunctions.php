@@ -13,7 +13,7 @@ class AboutFunctions extends TestCase
      */
     public function usesFunctionKeywordToDefineFunctions()
     {
-        function sayHello(): string
+        function sayHello()
         {
             return 'Hello, world!';
         }
@@ -27,7 +27,7 @@ class AboutFunctions extends TestCase
      */
     public function usesFunctionsArgumentsToPassInformationToFunctions()
     {
-        function add($variableOne, $variableTwo): int
+        function add($variableOne, $variableTwo)
         {
             return $variableOne + $variableTwo;
         }
@@ -41,7 +41,7 @@ class AboutFunctions extends TestCase
      */
     public function usesDefaultArgumentsValues()
     {
-        function greet($name = 'Guest'): string
+        function greet($name = 'Guest')
         {
             return 'Hello, ' . $name . '!';
         }
@@ -59,7 +59,7 @@ class AboutFunctions extends TestCase
      */
     public function usesMultipleReturnToReturnMultipleValues()
     {
-        function getFullName(): array
+        function getFullName()
         {
             $firstName = 'John';
             $lastName = 'Doe';
@@ -79,7 +79,7 @@ class AboutFunctions extends TestCase
      */
     public function usesRecursionToCallTheFunctionInsideIt()
     {
-        function factorial($number): int
+        function factorial($number)
         {
             if ($number === 0) {
                 return 1;

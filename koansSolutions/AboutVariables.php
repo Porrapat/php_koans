@@ -31,7 +31,6 @@ class AboutVariables extends TestCase
     public function testFloatVariable()
     {
         $pi = 3.14;
-        $this->assertIsFloat($pi);
         $this->assertEquals(3.14, $pi);
     }
 
@@ -53,7 +52,6 @@ class AboutVariables extends TestCase
     public function testArrayVariable()
     {
         $array = [1, 2, 3];
-        $this->assertIsArray($array);
         $this->assertEquals([1, 2, 3], $array);
     }
 
@@ -74,7 +72,6 @@ class AboutVariables extends TestCase
         $object = new \stdClass();
         $object->language = "PHP";
 
-        $this->assertIsObject($object);
         $this->assertEquals('PHP', $object->language);
     }
 }

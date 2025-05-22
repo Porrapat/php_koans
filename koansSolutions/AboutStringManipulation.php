@@ -261,18 +261,6 @@ EOT;
     }
 
     /**
-     * @testdox Strings with the same value are still unique objects when cast to object
-     */
-    public function testStringsAreUniqueObjects()
-    {
-        $a = "a string";
-        $b = "a string";
-
-        $this->assertEquals(true, $a == $b);
-        $this->assertEquals(true, spl_object_id((object) $a) == spl_object_id((object) $b));
-    }
-
-    /**
      * @testdox One can change the case of strings.
      */
     public function testChangeCaseOfStrings()

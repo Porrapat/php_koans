@@ -5,10 +5,23 @@ echo "Running PHP Koans...\n";
 // Autoload Composer
 require_once __DIR__ . '/vendor/autoload.php';
 
-$isWindows = strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN';
+if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
+    $isWindows = strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN';
 
-$phpunit = $isWindows
-    ? 'vendor\bin\phpunit.bat'
-    : './vendor/bin/phpunit';
+    $phpunit = $isWindows
+        ? 'vendor\bin\phpunit.bat'
+        : './vendor/bin/phpunit';
 
-passthru($phpunit. ' --colors=always');
+    passthru($phpunit. ' --colors=always');
+} else {
+    $isWindows = strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
+
+    $phpunit = $isWindows
+        ? 'vendor\bin\phpunit.bat'
+        : './vendor/bin/phpunit';
+
+    passthru($phpunit);
+}
+
+
+

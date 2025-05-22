@@ -4,15 +4,15 @@ namespace Koans\koansResources\Classes;
 
 class SportCar extends Car
 {
-    protected string $protectedProperty = 'The protected properties are visible in the subclass';
-    private string $privateProperty = 'Can I change?';
+    protected $protectedProperty = 'The protected properties are visible in the subclass';
+    private $privateProperty = 'Can I change?';
 
-    public function startEngine(): string
+    public function startEngine() 
     {
         return 'Engine started with turbo!';
     }
 
-    public function drive($speed): string
+    public function drive($speed) 
     {
         return 'Driving at ' . $speed . ' m/h';
     }

@@ -9,7 +9,7 @@ class AboutNamedArgumentsTest extends TestCase
         return [$one, $two];
     }
 
-    public function test_named_arguments_behavior(): void
+    public function test_named_arguments_behavior() 
     {
         $this->assertEquals('Closure', get_class(Closure::fromCallable([$this, 'methodWithNamedArguments'])));
         $this->assertEquals([1, 'two'], $this->methodWithNamedArguments());
@@ -22,7 +22,7 @@ class AboutNamedArgumentsTest extends TestCase
         return [$one, $two, $three];
     }
 
-    // public function test_missing_required_argument_throws_error(): void
+    // public function test_missing_required_argument_throws_error() 
     // {
     //     // $this->expectException(ArgumentCountError::class);
     //     // $this->expectExceptionMessageMatches('/too few arguments/');
@@ -34,13 +34,13 @@ class AboutNamedArgumentsTest extends TestCase
         return [$one, $two];
     }
 
-    public function test_mandatory_named_argument_works(): void
+    public function test_mandatory_named_argument_works() 
     {
         $this->assertEquals(['one', 'two'], $this->methodWithMandatoryNamedArgument(one: 'one'));
         $this->assertEquals([1, 2], $this->methodWithMandatoryNamedArgument(two: 2, one: 1));
     }
 
-    public function test_missing_mandatory_named_argument_throws_error(): void
+    public function test_missing_mandatory_named_argument_throws_error() 
     {
         $this->expectException(ArgumentCountError::class);
         $this->expectExceptionMessageMatches('/too few arguments/');

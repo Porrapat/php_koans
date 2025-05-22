@@ -13,20 +13,12 @@ use PHPUnit\Util\TestDox\CliTestDoxPrinter;
  */
 class KoanPrinter extends CliTestDoxPrinter
 {
-    public function printResult(TestResult $result): void
+    public function printResult(TestResult $result) 
     {
-        $this->printHeader($result);
         $this->printFooter($result);
     }
 
-    protected function printHeader($result): void
-    {
-        if (\count($result) !== 0) {
-            $this->write("\n\n");
-        }
-    }
-
-    protected function printFooter(TestResult $result): void
+    protected function printFooter(TestResult $result) 
     {
         if (\count($result) === 0) {
             $this->writeWithColor(
@@ -104,7 +96,7 @@ class KoanPrinter extends CliTestDoxPrinter
      * @param string $color
      * @param bool $always
      */
-    private function writeCountString(int $count, string $name, string $color, bool $always = false): void
+    private function writeCountString(int $count, string $name, string $color, bool $always = false) 
     {
         static $first = true;
 

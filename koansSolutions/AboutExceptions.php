@@ -51,20 +51,20 @@ class AboutExceptions extends TestCase
         }
     }
 
-    /**
-     * @test
-     * @testdox Catching multiple exceptions using a single catch block
-     */
-    public function catchesMultipleExceptionsSingleBlockUsingPipes()
-    {
-        try {
-            throw new RuntimeException('Runtime exception occurred');
-        } catch (RuntimeException | LogicException $exception) {
-            $this->assertEquals('Runtime exception occurred', $exception->getMessage());
-        } catch (Exception $exception) {
-            $this->fail('Should not catch this exception');
-        }
-    }
+    // /**
+    //  * @test
+    //  * @testdox Catching multiple exceptions using a single catch block
+    //  */
+    // public function catchesMultipleExceptionsSingleBlockUsingPipes()
+    // {
+    //     try {
+    //         throw new RuntimeException('Runtime exception occurred');
+    //     } catch (RuntimeException | LogicException $exception) {
+    //         $this->assertEquals('Runtime exception occurred', $exception->getMessage());
+    //     } catch (Exception $exception) {
+    //         $this->fail('Should not catch this exception');
+    //     }
+    // }
 
     /**
      * @test

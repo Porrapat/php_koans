@@ -4,11 +4,11 @@ namespace Koans\koansResources\Classes;
 
 class Car
 {
-    public string $color;
-    private string $brand;
-    private string $privateProperty = 'This is hidden out of the class';
-    protected string $protectedProperty = 'This is protected';
-    public static int $counter = 0;
+    public $color;
+    private $brand;
+    private $privateProperty = 'This is hidden out of the class';
+    protected $protectedProperty = 'This is protected';
+    public static $counter = 0;
 
     public function __construct($color, $brand)
     {
@@ -16,37 +16,37 @@ class Car
         $this->brand = $brand;
     }
 
-    public function getBrand(): string
+    public function getBrand() 
     {
         return $this->brand;
     }
 
-    public function setColor($color): void
+    public function setColor($color) 
     {
         $this->color = $color;
     }
 
-    public function getSecret(): string
+    public function getSecret() 
     {
         return $this->privateProperty;
     }
 
-    public function getProtectedProperty(): string
+    public function getProtectedProperty() 
     {
         return $this->protectedProperty;
     }
 
-    public function startEngine(): string
+    public function startEngine() 
     {
         return 'Engine started!';
     }
 
-    public function drive($speed): string
+    public function drive($speed) 
     {
         return 'Driving at ' . $speed . ' km/h';
     }
 
-    public static function getCount(): int
+    public static function getCount()
     {
         return self::$counter;
     }

@@ -84,19 +84,6 @@ class AboutClasses extends TestCase
 
     /**
      * @test
-     * @testdox Private methods and properties cannot be accessed directly from outside the class
-     */
-    public function usesTheCorrectExceptionMessageToPassTheTest()
-    {
-        $car = new Car('yellow', 'Mercedes');
-
-        $this->expectException(Error::class);
-        $this->expectExceptionMessage('Cannot access private property');
-        $car->privateProperty;
-    }
-
-    /**
-     * @test
      * @testdox Protected methods and properties cannot be accessed directly from outside the class
      */
     public function usesPublicMethodsToAccessToProtectedProperties()

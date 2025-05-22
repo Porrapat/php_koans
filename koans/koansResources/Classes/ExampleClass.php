@@ -4,9 +4,9 @@ namespace Koans\koansResources\Classes;
 
 class ExampleClass
 {
-    public string $exampleProperty = 'Hi, I\'m a property';
-
-    public function exampleMethod(): string
+    public $exampleProperty = 'Hi, I\'m a property';
+    
+    public function exampleMethod() 
     {
         return 'Hi, I\'m a method';
     }

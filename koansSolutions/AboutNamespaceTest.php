@@ -8,12 +8,12 @@ trait Nameable
 {
     protected string $name;
 
-    public function setName(string $newName): void
+    public function setName(string $newName) 
     {
         $this->name = $newName;
     }
 
-    public function here(): string
+    public function here() 
     {
         return 'in_trait';
     }
@@ -28,17 +28,17 @@ class DogUsingNameable
         $this->name = "Fido";
     }
 
-    public function bark(): string
+    public function bark() 
     {
         return "WOOF";
     }
 
-    public function getName(): string
+    public function getName() 
     {
         return $this->name;
     }
 
-    public function here(): string
+    public function here() 
     {
         return 'in_class';
     }
