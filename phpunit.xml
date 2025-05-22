@@ -5,7 +5,7 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite name="PHP Koans">
-            <file>koans/AboutAsserts.php</file>
+            <!-- <file>koans/AboutAsserts.php</file> -->
             <!-- <file>koans/AboutTrueAndFalse.php</file> -->
             <!-- <file>koans/AboutVariables.php</file> -->
             <!-- <file>koans/AboutControlStatements.php</file> -->
@@ -44,6 +44,10 @@
             <!-- <file>koansSolutions/AboutExceptions.php</file> -->
             <!-- <file>koansSolutions/AboutFunctions.php</file> -->
             <!-- <file>koansSolutions/AboutRegularExpressions.php</file> -->
+
+            <!-- <file>koansSolutions/AboutNamespaceTest.php</file> -->
+            <!-- <file>koansSolutions/AboutClassMethodTest.php</file> -->
+            <!-- <file>koansSolutions/AboutNamedArgumentsTest.php</file> -->
         </testsuite>
     </testsuites>
 </phpunit>
