@@ -2,7 +2,7 @@
 <phpunit bootstrap="bootstrap.php"
          printerClass="KoansLib\KoanPrinter"
          colors="true"
-         stopOnFailure="false">
+         stopOnFailure="true">
     <testsuites>
         <testsuite name="PHP Koans">
             <file>koans/AboutAsserts.php</file>
