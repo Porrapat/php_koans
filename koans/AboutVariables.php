@@ -77,4 +77,22 @@ class AboutVariables extends TestCase
         $this->assertIsObject($object);
         $this->assertEquals(__, $object->language);
     }
+
+    /**
+     * @testdox A type of variable
+     */
+    public function testATypeOfVariable()
+    {
+        $this->assertEquals(__, gettype(42));
+        $this->assertEquals(__, gettype(3.14)); // ใช้ 'double' แทน float
+        $this->assertEquals(__, gettype("Hello"));
+        $this->assertEquals(__, gettype(true));
+        $this->assertEquals(__, gettype(null));
+        $this->assertEquals(__, gettype([1, 2, 3]));
+        $this->assertEquals(__, gettype(new \stdClass()));
+        
+        $fp = fopen('php://temp', 'r');
+        $this->assertEquals(__, gettype($fp));
+        fclose($fp);
+    }
 }
