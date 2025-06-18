@@ -20,13 +20,11 @@
             <!-- <file>koans/AboutExceptions.php</file> -->
             <!-- <file>koans/AboutFunctions.php</file> -->
             <!-- <file>koans/AboutRegularExpressions.php</file> -->
-
             <!-- <file>koans/AboutArrayAssignment.php</file> -->
             <!-- <file>koans/AboutAssociativeArray.php</file> -->
             <!-- <file>koans/AboutObjects.php</file> -->
-
-            <file>koans/AboutNull.php</file>
-
+            <!-- <file>koans/AboutNull.php</file> -->
+            <!-- <file>koans/AboutDateTime.php</file> -->
 
             <!-- <file>koansSolutions/AboutAsserts.php</file> -->
             <!-- <file>koansSolutions/AboutVariables.php</file> -->
@@ -42,12 +40,12 @@
             <!-- <file>koansSolutions/AboutExceptions.php</file> -->
             <!-- <file>koansSolutions/AboutFunctions.php</file> -->
             <!-- <file>koansSolutions/AboutRegularExpressions.php</file> -->
-
             <!-- <file>koansSolutions/AboutArrayAssignment.php</file> -->
             <!-- <file>koansSolutions/AboutAssociativeArray.php</file> -->
             <!-- <file>koansSolutions/AboutObjects.php</file> -->
-
             <!-- <file>koansSolutions/AboutNull.php</file> -->
+            <!-- <file>koansSolutions/AboutDateTime.php</file> -->
+            
         </testsuite>
     </testsuites>
 </phpunit>
