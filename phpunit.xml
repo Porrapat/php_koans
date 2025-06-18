@@ -5,17 +5,20 @@
          stopOnFailure="true">
     <testsuites>
         <testsuite name="PHP Koans">
-
-            <!-- <file>koans/AboutAsserts.php</file>  -->
-            <!-- <file>koans/AboutVariables.php</file> -->
+            <!-- <file>koans/AboutAsserts.php</file> -->
             <!-- <file>koans/AboutTrueAndFalse.php</file> -->
+            <!-- <file>koans/AboutVariables.php</file> -->
             <!-- <file>koans/AboutControlStatements.php</file> -->
             <!-- <file>koans/AboutStrings.php</file> -->
             <!-- <file>koans/AboutStringManipulation.php</file> -->
             <!-- <file>koans/AboutArrays.php</file>  -->
+            <!-- <file>koans/AboutArrayAssignment.php</file> -->
+            <!-- <file>koans/AboutAssociativeArray.php</file> -->
             <!-- <file>koans/AboutEmptyIsNullOrIsset.php</file> -->
             <!-- <file>koans/AboutCallbackFunctions.php</file> -->
             <!-- <file>koans/AboutClasses.php</file> -->
+            <!-- <file>koans/AboutObjects.php</file> -->
+            <!-- <file>koans/AboutNull.php</file> -->
             <!-- <file>koans/AboutDataTypes.php</file> -->
             <!-- <file>koans/AboutExceptions.php</file> -->
             <!-- <file>koans/AboutFunctions.php</file> -->
@@ -26,17 +29,25 @@
             <!-- <file>koans/AboutNull.php</file> -->
             <!-- <file>koans/AboutDateTime.php</file> -->
             <!-- <file>koans/AboutPDO.php</file> -->
+            
+            <!-- <file>koans/AboutNamespace.php</file> -->
+
+
 
             <!-- <file>koansSolutions/AboutAsserts.php</file> -->
-            <!-- <file>koansSolutions/AboutVariables.php</file> -->
             <!-- <file>koansSolutions/AboutTrueAndFalse.php</file> -->
+            <!-- <file>koansSolutions/AboutVariables.php</file> -->
             <!-- <file>koansSolutions/AboutControlStatements.php</file> -->
             <!-- <file>koansSolutions/AboutStrings.php</file> -->
             <!-- <file>koansSolutions/AboutStringManipulation.php</file> -->
             <!-- <file>koansSolutions/AboutArrays.php</file>  -->
+            <!-- <file>koansSolutions/AboutArrayAssignment.php</file> -->
+            <!-- <file>koansSolutions/AboutAssociativeArray.php</file> -->
             <!-- <file>koansSolutions/AboutEmptyIsNullOrIsset.php</file> -->
             <!-- <file>koansSolutions/AboutCallbackFunctions.php</file> -->
             <!-- <file>koansSolutions/AboutClasses.php</file> -->
+            <!-- <file>koansSolutions/AboutObjects.php</file> -->
+            <!-- <file>koansSolutions/AboutNull.php</file> -->
             <!-- <file>koansSolutions/AboutDataTypes.php</file> -->
             <!-- <file>koansSolutions/AboutExceptions.php</file> -->
             <!-- <file>koansSolutions/AboutFunctions.php</file> -->
@@ -48,6 +59,10 @@
             <!-- <file>koansSolutions/AboutDateTime.php</file> -->
             <!-- <file>koansSolutions/AboutPDO.php</file> -->
             
+            <!-- <file>koansSolutions/AboutNamespace.php</file> -->
+            <!-- <file>koansSolutions/AboutClassMethodTest.php</file> -->
+            <!-- <file>koansSolutions/AboutNamedArgumentsTest.php</file> -->
+            <!-- <file>koansSolutions/AboutInheritanceChatGPT.php</file> -->
         </testsuite>
     </testsuites>
 </phpunit>
