@@ -86,6 +86,16 @@ php artisan test    # Laravel-style
 php spark test      # CodeIgniter 4-style
 ```
 
+### Tips & Tricks – Watching Koans Automatically
+
+You have to install chokidar, if you have Node.js installed.
+
+```bash
+node -v                         # make sure Node.js has installed.
+npm install -g chokidar-cli     # install chokidar-cli
+composer watch                  # run command
+```
+
 ### License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

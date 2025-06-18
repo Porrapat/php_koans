@@ -18,6 +18,10 @@
         "phpunit/phpunit": "^9.0"
     },
     "scripts": {
-        "test": "php path_to_enlightenment.php"
+        "test": "php path_to_enlightenment.php",
+        "watch": "chokidar \"./koans/**/*.php\" \"phpunit.xml\" \"./koansSolutions/**/*.php\" -c \"php path_to_enlightenment.php\""
+    },
+    "config": {
+        "process-timeout": 0
     }
 }

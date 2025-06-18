@@ -89,6 +89,16 @@ php artisan test    # Laravel-style
 php spark test      # CodeIgniter 4-style
 ```
 
+### เคล็ดลับ – Watch ดูผล Koans อัตโนมัติ
+
+คุณสามารถใช้ chokidar-cli เพื่อตรวจจับการเปลี่ยนแปลงของไฟล์ แล้วรัน Koans อัตโนมัติได้ (ต้องติดตั้ง Node.js ไว้ก่อน)
+
+```bash
+node -v                         # ตรวจสอบว่าเครื่องคุณติดตั้ง Node.js แล้วหรือยัง
+npm install -g chokidar-cli     # ติดตั้ง chokidar-cli แบบ global
+composer watch                  # ใช้คำสั่งนี้เพื่อเริ่มดูไฟล์และรัน Koans
+```
+
 ### สัญญาอนุญาต (License)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
