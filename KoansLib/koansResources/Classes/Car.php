@@ -1,6 +1,6 @@
 <?php
 
-namespace Koans\koansResources\Classes;
+namespace KoansLib\koansResources\Classes;
 
 class Car
 {
