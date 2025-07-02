@@ -8,7 +8,7 @@ namespace Koans\koansResources\Classes;
 class Enlightenment
 {
     /**
-     * Important: This class is within the PhpKoans namespace.
-     * That means that the FQCN ("fully qualified class name") starts with "PhpKoans\"
+     * Important: This class is within the Koans\koansResources\Classes namespace.
+     * That means that the FQCN ("fully qualified class name") starts with "Koans\koansResources\Classes\"
      */
 }

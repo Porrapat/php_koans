@@ -68,7 +68,6 @@ class AboutAsserts extends TestCase
      */
     public function testSometimesWeNeedToKnowTheClassType()
     {
-        // See bottom of this file for class definition
         $object = new Enlightenment();
 
         $this->assertEquals('Enlightenment', basename(str_replace('\\', '/', get_class($object))));
