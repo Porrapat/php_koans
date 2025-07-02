@@ -2,7 +2,7 @@
 
 namespace Koans;
 
-use KoansLib\koansResources\Classes\Greeting;
+use KoansLib\KoansResources\Classes\Greeting;
 use PHPUnit\Framework\TestCase;
 
 // Resources for learning about callbacks => https://www.php.net/manual/en/language.types.callable.php

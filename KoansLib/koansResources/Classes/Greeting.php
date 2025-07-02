@@ -1,6 +1,6 @@
 <?php
 
-namespace KoansLib\koansResources\Classes;
+namespace KoansLib\KoansResources\Classes;
 
 class Greeting
 {

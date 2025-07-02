@@ -3,9 +3,9 @@
 namespace Koans;
 
 use Error;
-use KoansLib\koansResources\Classes\Car;
-use KoansLib\koansResources\Classes\ExampleClass;
-use KoansLib\koansResources\Classes\SportCar;
+use KoansLib\KoansResources\Classes\Car;
+use KoansLib\KoansResources\Classes\ExampleClass;
+use KoansLib\KoansResources\Classes\SportCar;
 use PHPUnit\Framework\TestCase;
 
 // Resources for learning about Classes and Objects => https://www.w3schools.com/php/php_oop_classes_objects.asp

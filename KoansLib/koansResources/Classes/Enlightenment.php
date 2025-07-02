@@ -1,6 +1,6 @@
 <?php
 
-namespace KoansLib\koansResources\Classes;
+namespace KoansLib\KoansResources\Classes;
 
 /**
  * Empty class for testThatSometimesWeNeedToKnowTheClassType()
@@ -8,7 +8,7 @@ namespace KoansLib\koansResources\Classes;
 class Enlightenment
 {
     /**
-     * Important: This class is within the KoansLib\koansResources\Classes namespace.
-     * That means that the FQCN ("fully qualified class name") starts with "KoansLib\koansResources\Classes\"
+     * Important: This class is within the KoansLib\KoansResources\Classes namespace.
+     * That means that the FQCN ("fully qualified class name") starts with "KoansLib\KoansResources\Classes\"
      */
 }

@@ -3,7 +3,7 @@
 namespace Koans;
 
 use PHPUnit\Framework\TestCase;
-use KoansLib\koansResources\Classes\Enlightenment;
+use KoansLib\KoansResources\Classes\Enlightenment;
 
 class AboutAsserts extends TestCase
 {
@@ -71,7 +71,7 @@ class AboutAsserts extends TestCase
         $object = new Enlightenment();
 
         $this->assertEquals('Enlightenment', basename(str_replace('\\', '/', get_class($object))));
-        $this->assertEquals('KoansLib\koansResources\Classes\Enlightenment', get_class($object));
+        $this->assertEquals('KoansLib\KoansResources\Classes\Enlightenment', get_class($object));
     }
 
     /**
