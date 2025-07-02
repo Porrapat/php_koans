@@ -63,7 +63,12 @@ class AboutStrings extends TestCase
 It was the worst of times.";
 
         // strlen() returns the length of a string as an integer (Hint: line breaks count as a character)
-        $this->assertEquals(53, strlen($string));
+        $isWindows = strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN';
+        if ($isWindows) {
+            $this->assertEquals(53, strlen($string));
+        } else {
+            $this->assertEquals(52, strlen($string));
+        }
     }
 
     /**
@@ -76,7 +81,12 @@ Howdy,
 world!
 EOT;
         // Hint: First and last line breaks of a Heredoc don't count
-        $this->assertEquals(14, strlen($string));
+        $isWindows = strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN';
+        if ($isWindows) {
+            $this->assertEquals(14, strlen($string));
+        } else {
+            $this->assertEquals(13, strlen($string));
+        }
     }
 
     /**
@@ -90,8 +100,12 @@ EOT;
 Howdy,
 world!
 WHATEVERYOUWANT;
-
-        $this->assertEquals(14, strlen($string));
+        $isWindows = strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN';
+        if ($isWindows) {
+            $this->assertEquals(14, strlen($string));
+        } else {
+            $this->assertEquals(13, strlen($string));
+        }
     }
 
     /**
@@ -105,7 +119,12 @@ Howdy,
 world!
 EOT;
         // Hint: First and last line breaks of a Heredoc don't count
-        $this->assertEquals(14, strlen($string));
+        $isWindows = strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN';
+        if ($isWindows) {
+            $this->assertEquals(14, strlen($string));
+        } else {
+            $this->assertEquals(13, strlen($string));
+        }
     }
 
     /**
@@ -132,7 +151,12 @@ It was the best of times,
 It was the worst of times.
 
 TEXT;
-        $this->assertEquals(55, strlen($longString));
+        $isWindows = strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN';
+        if ($isWindows) {
+            $this->assertEquals(55, strlen($longString));
+        } else {
+            $this->assertEquals(53, strlen($longString));
+        }
         $this->assertEquals(2, substr_count($longString, "\n"));
         $this->assertEquals('I', substr($longString, 0, 1));
     }
