@@ -84,7 +84,7 @@ class AboutVariables extends TestCase
     public function testATypeOfVariable()
     {
         $this->assertEquals('integer', gettype(42));
-        $this->assertEquals('double', gettype(3.14)); // ใช้ 'double' แทน float
+        $this->assertEquals('double', gettype(3.14)); // use 'double' instead of 'float'
         $this->assertEquals('string', gettype("Hello"));
         $this->assertEquals('boolean', gettype(true));
         $this->assertEquals('NULL', gettype(null));
