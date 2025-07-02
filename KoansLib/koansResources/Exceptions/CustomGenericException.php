@@ -1,6 +1,6 @@
 <?php
 
-namespace KoansLib\koansResources\Exceptions;
+namespace KoansLib\KoansResources\Exceptions;
 
 use Exception;
 
