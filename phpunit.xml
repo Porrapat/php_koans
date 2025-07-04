@@ -26,6 +26,7 @@
             <!-- <file>koans/AboutNull.php</file> -->
             <!-- <file>koans/AboutDateTime.php</file> -->
             <!-- <file>koans/AboutPDO.php</file> -->
+            <!-- <file>koans/AboutTriangleProject.php</file> -->
 
             <!-- <file>koansSolutions/AboutAsserts.php</file> -->
             <!-- <file>koansSolutions/AboutVariables.php</file> -->
@@ -47,6 +48,7 @@
             <!-- <file>koansSolutions/AboutNull.php</file> -->
             <!-- <file>koansSolutions/AboutDateTime.php</file> -->
             <!-- <file>koansSolutions/AboutPDO.php</file> -->
+            <!-- <file>koansSolutions/AboutTriangleProject.php</file> -->
             
         </testsuite>
     </testsuites>
