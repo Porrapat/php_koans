@@ -9,6 +9,8 @@
             <!-- <file>koans/AboutTrueAndFalse.php</file> -->
             <!-- <file>koans/AboutVariables.php</file> -->
             <!-- <file>koans/AboutControlStatements.php</file> -->
+            <!-- <file>koans/AboutIsEvenMiniProject.php</file> -->
+            <!-- <file>koans/AboutTriangleProject.php</file> -->
             <!-- <file>koans/AboutStrings.php</file> -->
             <!-- <file>koans/AboutStringManipulation.php</file> -->
             <!-- <file>koans/AboutArrays.php</file>  -->
@@ -29,12 +31,13 @@
             <!-- <file>koans/AboutNull.php</file> -->
             <!-- <file>koans/AboutDateTime.php</file> -->
             <!-- <file>koans/AboutPDO.php</file> -->
-            <!-- <file>koans/AboutTriangleProject.php</file> -->
 
             <!-- <file>koansSolutions/AboutAsserts.php</file> -->
             <!-- <file>koansSolutions/AboutVariables.php</file> -->
             <!-- <file>koansSolutions/AboutTrueAndFalse.php</file> -->
             <!-- <file>koansSolutions/AboutControlStatements.php</file> -->
+            <!-- <file>koansSolutions/AboutIsEvenMiniProject.php</file> -->
+            <!-- <file>koansSolutions/AboutTriangleProject.php</file> -->
             <!-- <file>koansSolutions/AboutStrings.php</file> -->
             <!-- <file>koansSolutions/AboutStringManipulation.php</file> -->
             <!-- <file>koansSolutions/AboutArrays.php</file>  -->
@@ -55,7 +58,6 @@
             <!-- <file>koansSolutions/AboutNull.php</file> -->
             <!-- <file>koansSolutions/AboutDateTime.php</file> -->
             <!-- <file>koansSolutions/AboutPDO.php</file> -->
-            <!-- <file>koansSolutions/AboutTriangleProject.php</file> -->
             
         </testsuite>
     </testsuites>
