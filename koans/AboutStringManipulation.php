@@ -62,7 +62,7 @@ class AboutStringManipulation extends TestCase
     }
 
     /**
-     * @testdox Double-quoted string interpet escape characters.
+     * @testdox Double-quoted strings interpret escape characters.
      */
     public function testDoubleQuotedStringInterpretEscapeCharacters()
     {
@@ -71,16 +71,16 @@ class AboutStringManipulation extends TestCase
     }
 
     /**
-     * @testdox Single-quoted string interpet escape characters.
+     * @testdox Single-quoted strings do not interpret most escape characters.
      */
-    public function testSingleQuotedStringDoInterpretEscapeCharacters()
+    public function testSingleQuotedStringDoNotInterpretEscapeCharacters()
     {
         $string = '\n';
         $this->assertEquals(__, strlen($string));
     }
 
     /**
-     * @testdox Single-quoted string sometimes interpet escape characters.
+     * @testdox Single-quoted strings only interpret a few escape characters.
      */
     public function testSingleQuotesSometimesInterpretEscapeCharacters()
     {
@@ -90,7 +90,7 @@ class AboutStringManipulation extends TestCase
     }
 
     /**
-     * @testdox Double-quoted string interpet variables.
+     * @testdox Double-quoted strings interpolate variables.
      */
     public function testDoubleQuotedStringsInterpolateVariables()
     {
