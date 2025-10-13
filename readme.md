@@ -90,7 +90,7 @@ php spark test      # CodeIgniter 4-style
 
 ### Tips & Tricks – Watching Koans Automatically
 
-Just run this command, it will use Rust built binary to watch folder /koans and file phpunit.xml
+Just run this command, it will use Rust built binary to watch /koans /KoansLib /koansSolution path_to_enlightenment.php and config_koans.txt
 
 ```bash
 ./watcher-Windows.exe           # For Windows

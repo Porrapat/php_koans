@@ -93,7 +93,7 @@ php spark test      # CodeIgniter 4-style
 
 ### เคล็ดลับ – Watch ดูผล Koans อัตโนมัติ
 
-แค่รันคำสั่งนี้ เบื้องหลังจะใช้ไฟล์ Binary ที่ Built จาก Rust เพื่อ Watch /koans และ file phpunit.xml
+แค่รันคำสั่งนี้ เบื้องหลังจะใช้ไฟล์ Binary ที่ Built จาก Rust เพื่อ Watch /koans /KoansLib /koansSolution path_to_enlightenment.php และ config_koans.txt
 
 ```bash
 ./watcher-Windows.exe           # For Windows
