@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-notify = "6"
+notify = "8.2.0"
 
 [[bin]]
 name = "watcher"               # ← นี่คือชื่อ binary ที่จะได้ เช่น watcher.exe
