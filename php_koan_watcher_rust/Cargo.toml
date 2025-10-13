@@ -1,0 +1,11 @@
+[package]
+name = "php_koan_watcher_rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+notify = "6"
+
+[[bin]]
+name = "watcher"               # ← นี่คือชื่อ binary ที่จะได้ เช่น watcher.exe
+path = "src/main.rs"           # ← ชี้ไปที่ main.rs เดิม
