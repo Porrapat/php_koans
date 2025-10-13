@@ -2,10 +2,10 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // Resources for learning about Regular Expressions => https://www.w3schools.com/php/php_regex.asp
-class AboutRegularExpressions extends TestCase
+class AboutRegularExpressions extends KoansTestCase
 {
     /**
      * @test

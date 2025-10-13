@@ -1,8 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutDateTime extends TestCase
+class AboutDateTime extends KoansTestCase
 {
     /**
      * @testdox Creating a DateTime from a string

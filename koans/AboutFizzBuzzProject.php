@@ -1,7 +1,7 @@
 <?php
 
 namespace Koans;
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // FizzBuzz Project
 
@@ -23,7 +23,7 @@ function fizzBuzz($number): string
     return __;
 }
 
-class AboutFizzBuzzProject extends TestCase
+class AboutFizzBuzzProject extends KoansTestCase
 {
     /**
      * @testdox Fizz buzz returns number in form of PHP String

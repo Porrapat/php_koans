@@ -1,13 +1,13 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // You must enable extension pdo_sqlite before playing with this Koans.
 
 /**
  * @requires extension pdo_sqlite
  */
-class AboutPDO extends TestCase
+class AboutPDO extends KoansTestCase
 {
     private \PDO $pdo;
 

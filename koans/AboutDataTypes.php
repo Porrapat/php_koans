@@ -2,11 +2,11 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 use stdClass;
 
 // Resources for learning about Data Types => https://www.w3schools.com/php/php_datatypes.asp
-class AboutDataTypes extends TestCase
+class AboutDataTypes extends KoansTestCase
 {
     /**
      * @test

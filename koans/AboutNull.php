@@ -1,7 +1,7 @@
 <?php
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutNullTest extends TestCase
+class AboutNullTest extends KoansTestCase
 {
     /**
      * @testdox Understand that null is a primitive and not an object

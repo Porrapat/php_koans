@@ -6,10 +6,10 @@ use Error;
 use KoansLib\KoansResources\Classes\Car;
 use KoansLib\KoansResources\Classes\ExampleClass;
 use KoansLib\KoansResources\Classes\SportCar;
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // Resources for learning about Classes and Objects => https://www.w3schools.com/php/php_oop_classes_objects.asp
-class AboutClasses extends TestCase
+class AboutClasses extends KoansTestCase
 {
     /**
      * @test

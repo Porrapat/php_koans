@@ -2,9 +2,9 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutArrays extends TestCase
+class AboutArrays extends KoansTestCase
 {
     /**
      * @testdox Creating an empty array results in an array type with zero elements

@@ -2,9 +2,9 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutStrings extends TestCase
+class AboutStrings extends KoansTestCase
 {
     /**
      * @testdox Double-quoted strings are strings.

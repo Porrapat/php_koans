@@ -2,10 +2,10 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // Resources for learning about Functions => https://www.w3schools.com/php/php_functions.asp
-class AboutFunctions extends TestCase
+class AboutFunctions extends KoansTestCase
 {
     /**
      * @test

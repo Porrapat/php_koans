@@ -3,10 +3,10 @@
 namespace Koans;
 
 use KoansLib\KoansResources\Classes\Greeting;
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // Resources for learning about callbacks => https://www.php.net/manual/en/language.types.callable.php
-class AboutCallbackFunctions extends TestCase
+class AboutCallbackFunctions extends KoansTestCase
 {
     /**
      * @test

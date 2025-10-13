@@ -5,11 +5,11 @@ namespace Koans;
 use Exception;
 use LogicException;
 use KoansLib\KoansResources\Exceptions\CustomGenericException;
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 use RuntimeException;
 
 // Resources for learning about Exceptions => https://www.w3schools.com/php/php_exceptions.asp
-class AboutExceptions extends TestCase
+class AboutExceptions extends KoansTestCase
 {
     /**
      * @test

@@ -1,8 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutObjects extends TestCase
+class AboutObjects extends KoansTestCase
 {
     /**
      * @testdox Understand what is and isn’t an object

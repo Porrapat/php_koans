@@ -2,9 +2,9 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutEmptyIsNullOrIsset extends TestCase
+class AboutEmptyIsNullOrIsset extends KoansTestCase
 {
     /**
      * @testdox is_null returns true only for null values

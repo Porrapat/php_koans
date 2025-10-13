@@ -1,8 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutArrayAssignment extends TestCase
+class AboutArrayAssignment extends KoansTestCase
 {
     /**
      * @testdox Can assign an array to a variable without parallel unpacking

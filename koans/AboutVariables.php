@@ -2,10 +2,10 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // Resources for learning about PHP variable => https://www.w3schools.com/php/php_variables.asp
-class AboutVariables extends TestCase
+class AboutVariables extends KoansTestCase
 {
     /**
      * @testdox This is string variable

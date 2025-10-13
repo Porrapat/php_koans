@@ -2,9 +2,9 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutControlStatements extends TestCase
+class AboutControlStatements extends KoansTestCase
 {
     /**
      * @testdox If-else executes the true branch when condition is true

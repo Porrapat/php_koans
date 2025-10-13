@@ -2,10 +2,10 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 use KoansLib\KoansResources\Classes\Enlightenment;
 
-class AboutAsserts extends TestCase
+class AboutAsserts extends KoansTestCase
 {
     /**
      * @testdox We shall contemplate truth by testing reality, via asserts.

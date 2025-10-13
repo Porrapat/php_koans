@@ -1,14 +1,19 @@
 <?php
 
-echo "Running PHP Koans...\n";
+// Define the __ placeholder constant
+define('__', '__FILL_ME_IN__');
 
 // Autoload Composer
 require_once __DIR__ . '/vendor/autoload.php';
 
-$isWindows = strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN';
+// Load KoansLib classes
+require_once __DIR__ . '/KoansLib/KoansTestCase.php';
+require_once __DIR__ . '/KoansLib/KoansRunner.php';
 
-$phpunit = $isWindows
-    ? 'vendor\bin\phpunit.bat'
-    : './vendor/bin/phpunit';
+use KoansLib\KoansRunner;
 
-passthru($phpunit. ' --colors=always');
+// Run the koans
+$runner = new KoansRunner('koans');
+$exitCode = $runner->run();
+
+exit($exitCode);

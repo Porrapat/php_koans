@@ -15,9 +15,7 @@
             "email": "porrapat.cpe20@gmail.com"
         }
     ],
-    "require-dev": {
-        "phpunit/phpunit": "^9.0"
-    },
+    "require-dev": {},
     "scripts": {
         "test": "php path_to_enlightenment.php",
         "watch": "php os-watcher.php"

@@ -1,7 +1,7 @@
 <?php
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutAssociativeArray extends TestCase
+class AboutAssociativeArray extends KoansTestCase
 {
     /**
      * @testdox Creating an empty associative array results in an empty array type

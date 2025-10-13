@@ -1,6 +1,6 @@
 <?php
 namespace Koans;
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // Triangle Project Code.
 
@@ -17,7 +17,7 @@ function triangle($a, $b, $c): string
     return __;
 }
 
-class AboutTriangleProject extends TestCase
+class AboutTriangleProject extends KoansTestCase
 {
     /**
      * @testdox Equilateral triangles have equal sides
