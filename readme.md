@@ -93,7 +93,9 @@ php spark test      # CodeIgniter 4-style
 Just run this command, it will use Rust built binary to watch folder /koans and file phpunit.xml
 
 ```bash
-composer watch                  # run command
+./watcher-Windows.exe           # For Windows
+./watcher-macOS                 # For macOS
+./watcher-Linux                 # For Linux
 ```
 
 ### License

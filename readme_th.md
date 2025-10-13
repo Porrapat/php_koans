@@ -96,7 +96,9 @@ php spark test      # CodeIgniter 4-style
 แค่รันคำสั่งนี้ เบื้องหลังจะใช้ไฟล์ Binary ที่ Built จาก Rust เพื่อ Watch /koans และ file phpunit.xml
 
 ```bash
-composer watch                  # run command
+./watcher-Windows.exe           # For Windows
+./watcher-macOS                 # For macOS
+./watcher-Linux                 # For Linux
 ```
 
 ### สัญญาอนุญาต (License)
