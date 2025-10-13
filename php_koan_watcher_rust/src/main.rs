@@ -16,17 +16,24 @@ fn main() -> Result<()> {
     let mut watcher = RecommendedWatcher::new(tx, Config::default())?;
 
     watcher.watch(Path::new("koans"), RecursiveMode::Recursive)?;
-    println!("👀 Watching for changes in /koans ...");
+    watcher.watch(Path::new("phpunit.xml"), RecursiveMode::NonRecursive)?;
+    println!("👀 Watching for changes in /koans and phpunit.xml ...");
 
     loop {
         match rx.recv_timeout(Duration::from_secs(1)) {
             Ok(Ok(Event { paths, .. })) => {
                 for path in paths {
-                    if let Some(ext) = path.extension() {
-                        if ext == "php" {
-                            println!("📄 File changed: {:?}", path);
-                            run_php_koans();
-                        }
+                    let file_name = path.file_name().and_then(|n| n.to_str());
+                    let should_run = if let Some(ext) = path.extension() {
+                        ext == "php" || (ext == "xml" && file_name == Some("phpunit.xml"))
+                    } else {
+                        false
+                    };
+
+                    if should_run {
+                        println!("📄 File changed: {:?}", path);
+                        clear_screen();
+                        run_php_koans();
                     }
                 }
             }
@@ -55,6 +62,19 @@ fn find_project_root() -> Option<PathBuf> {
     None
 }
 
+
+fn clear_screen() {
+    if cfg!(target_os = "windows") {
+        Command::new("cmd")
+            .args(&["/C", "cls"])
+            .status()
+            .ok();
+    } else {
+        Command::new("clear")
+            .status()
+            .ok();
+    }
+}
 
 fn run_php_koans() {
     let status = Command::new("php")

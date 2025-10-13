@@ -21,6 +21,8 @@ Koans นี้ได้รับแรงบันดาลใจมาจา�
 - [Python Koans](https://github.com/gregmalcolm/python_koans)
 - [PHP Koans (โดยคุณ Akoebbe)](https://github.com/akoebbe/php_koans.git)
 - [PHP Koans (โดยคุณ IvanSolaDelgado)](https://github.com/540/php_koans.git)
+- [Rustlings](https://github.com/rust-lang/rustlings)
+- [Rust Koans (โดยคุณ crazymykl)](https://github.com/crazymykl/rust-koans)
 
 ---
 
@@ -91,12 +93,10 @@ php spark test      # CodeIgniter 4-style
 
 ### เคล็ดลับ – Watch ดูผล Koans อัตโนมัติ
 
-คุณสามารถใช้ chokidar-cli เพื่อตรวจจับการเปลี่ยนแปลงของไฟล์ แล้วรัน Koans อัตโนมัติได้ (ต้องติดตั้ง Node.js ไว้ก่อน)
+แค่รันคำสั่งนี้ เบื้องหลังจะใช้ไฟล์ Binary ที่ Built จาก Rust เพื่อ Watch /koans และ file phpunit.xml
 
 ```bash
-node -v                         # ตรวจสอบว่าเครื่องคุณติดตั้ง Node.js แล้วหรือยัง
-npm install -g chokidar-cli     # ติดตั้ง chokidar-cli แบบ global
-composer watch                  # ใช้คำสั่งนี้เพื่อเริ่มดูไฟล์และรัน Koans
+composer watch                  # run command
 ```
 
 ### สัญญาอนุญาต (License)

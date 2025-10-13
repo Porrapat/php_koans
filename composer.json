@@ -20,7 +20,7 @@
     },
     "scripts": {
         "test": "php path_to_enlightenment.php",
-        "watch": "chokidar \"./koans/**/*.php\" \"phpunit.xml\" \"./koansSolutions/**/*.php\" -c \"php path_to_enlightenment.php\""
+        "watch": "php os-watcher.php"
     },
     "config": {
         "process-timeout": 0

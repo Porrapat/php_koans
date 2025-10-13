@@ -21,7 +21,9 @@ The following repositories inspired this project:
 - [Python Koans](https://github.com/gregmalcolm/python_koans)
 - [PHP Koans (by Akoebbe)](https://github.com/akoebbe/php_koans.git)
 - [PHP Koans (by IvanSolaDelgado)](https://github.com/540/php_koans.git)
-  
+- [Rustlings](https://github.com/rust-lang/rustlings)
+- [Rust Koans (by crazymykl)](https://github.com/crazymykl/rust-koans)
+
 ---
 
 ## Installing PHP
@@ -88,11 +90,9 @@ php spark test      # CodeIgniter 4-style
 
 ### Tips & Tricks – Watching Koans Automatically
 
-You have to install chokidar, if you have Node.js installed.
+Just run this command, it will use Rust built binary to watch folder /koans and file phpunit.xml
 
 ```bash
-node -v                         # make sure Node.js has installed.
-npm install -g chokidar-cli     # install chokidar-cli
 composer watch                  # run command
 ```
 
