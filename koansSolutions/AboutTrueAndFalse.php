@@ -2,9 +2,9 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutTrueAndFalseTest extends TestCase
+class AboutTrueAndFalse extends KoansTestCase
 {
     /**
      * @testdox true is treated as true

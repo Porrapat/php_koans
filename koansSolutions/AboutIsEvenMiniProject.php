@@ -1,7 +1,8 @@
 <?php
 
 namespace Koans;
-use PHPUnit\Framework\TestCase;
+
+use KoansLib\KoansTestCase;
 
 function is_even(int $number): bool
 {
@@ -11,7 +12,7 @@ function is_even(int $number): bool
 /**
  * @testdox Write the function that check it is even number or not
  */
-class AboutIsEvenMiniProject extends TestCase
+class AboutIsEvenMiniProject extends KoansTestCase
 {
     /**
      * @testdox Is even number

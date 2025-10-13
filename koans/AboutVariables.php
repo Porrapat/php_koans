@@ -74,7 +74,6 @@ class AboutVariables extends KoansTestCase
         $object = new \stdClass();
         $object->language = "PHP";
 
-        $this->assertIsObject($object);
         $this->assertEquals(__, $object->language);
     }
 

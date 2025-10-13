@@ -9,10 +9,9 @@ use KoansLib\KoansTestCase;
 class AboutCallbackFunctions extends KoansTestCase
 {
     /**
-     * @test
      * @testdox Callback functions can be invoked using the `call_user_func()` function and with parentheses
      */
-    public function invokesCallbackFunction()
+    public function testInvokesCallbackFunction()
     {
         $callback = function ($name): string {
             return 'Hello, ' . $name . '!';
@@ -26,10 +25,9 @@ class AboutCallbackFunctions extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Callback functions can accept other functions as arguments
      */
-    public function acceptsFunctionAsArgument()
+    public function testAcceptsFunctionAsArgument()
     {
         $callback = function ($name, $greetingFunction): string {
             return $greetingFunction($name);
@@ -44,10 +42,9 @@ class AboutCallbackFunctions extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Callback functions can be defined as static methods of a class
      */
-    public function definesStaticCallbackMethod()
+    public function testDefinesStaticCallbackMethod()
     {
         $callback = [new Greeting(), 'greet'];
 
@@ -57,10 +54,9 @@ class AboutCallbackFunctions extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Callback functions can be defined as instance methods of an object
      */
-    public function definesInstanceCallbackMethod()
+    public function testDefinesInstanceCallbackMethod()
     {
         $greeting = new Greeting();
         $callback = [$greeting, 'greet'];
@@ -71,10 +67,9 @@ class AboutCallbackFunctions extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox The `array_map()` function applies a callback function to each element of an array
      */
-    public function usesArrayMapToChangeAnArrayUsingAFunction()
+    public function testUsesArrayMapToChangeAnArrayUsingAFunction()
     {
         $numbers = [1, 2, 3, 4, 5];
         $callback = function ($number): int {
@@ -87,10 +82,9 @@ class AboutCallbackFunctions extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox The implementation of the callback function can be passed to array_map() as an argument
      */
-    public function usesArrayMapWithCallbackImplementationAsArgument()
+    public function testUsesArrayMapWithCallbackImplementationAsArgument()
     {
         $numbers = [1, 2, 3, 4, 5];
 
@@ -102,10 +96,9 @@ class AboutCallbackFunctions extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox The `array_filter()` function filters elements of an array using a callback function
      */
-    public function usesArrayFilterToFilterAnArrayUsingAFunction()
+    public function testUsesArrayFilterToFilterAnArrayUsingAFunction()
     {
         $numbers = [0 => 1, 1 => 2, 2 => 3, 3 => 4, 4 => 5];
 

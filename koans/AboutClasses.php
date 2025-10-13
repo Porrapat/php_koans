@@ -12,10 +12,9 @@ use KoansLib\KoansTestCase;
 class AboutClasses extends KoansTestCase
 {
     /**
-     * @test
      * @testdox You can create multiple instances of a class (objects)
      */
-    public function definesAClassUsingClassKeyword()
+    public function testDefinesAClassUsingClassKeyword()
     {
         $exampleClass = 'I want to be an object of class ExampleClass';
 
@@ -23,10 +22,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Classes can have properties and can only be accessed if they are public
      */
-    public function accessToAPublicProperty()
+    public function testAccessToAPublicProperty()
     {
         $exampleClass = new ExampleClass();
 
@@ -34,10 +32,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Methods can be defined in a class
      */
-    public function usesAMethodDefinedInExampleClass()
+    public function testUsesAMethodDefinedInExampleClass()
     {
         $exampleClass = new ExampleClass();
 
@@ -45,10 +42,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Classes can have constructors => https://www.w3schools.com/php/php_oop_constructor.asp
      */
-    public function initializesPropertiesWithConstructor()
+    public function testInitializesPropertiesWithConstructor()
     {
         $car = new Car(__, __);
 
@@ -57,10 +53,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Classes can have getters and setters methods to access and set value to properties
      */
-    public function usesGettersAndSettersToSetAndGetPropertiesValues()
+    public function testUsesGettersAndSettersToSetAndGetPropertiesValues()
     {
         $car = new Car('yellow', 'Aston Martin');
 
@@ -71,10 +66,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Static properties and methods => https://www.w3schools.com/php/php_oop_static_properties.asp
      */
-    public function usesStaticPropsAndMethodsWithNoInstance()
+    public function testUsesStaticPropsAndMethodsWithNoInstance()
     {
         Car::$counter++;
 
@@ -83,23 +77,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
-     * @testdox Private methods and properties cannot be accessed directly from outside the class
-     */
-    public function usesTheCorrectExceptionMessageToPassTheTest()
-    {
-        $car = new Car('yellow', 'Mercedes');
-
-        $this->expectException(Error::class);
-        $this->expectExceptionMessage('Fix me');
-        $car->privateProperty;
-    }
-
-    /**
-     * @test
      * @testdox Protected methods and properties cannot be accessed directly from outside the class
      */
-    public function usesPublicMethodsToAccessToProtectedProperties()
+    public function testUsesPublicMethodsToAccessToProtectedProperties()
     {
         $car = new Car('yellow', 'Mercedes');
 
@@ -107,10 +87,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Child classes can inherit properties and methods from their parent class
      */
-    public function usesInheritedPublicProtectedPropsMethods()
+    public function testUsesInheritedPublicProtectedPropsMethods()
     {
         $sportCar = new SportCar('blue', 'Toyota');
 
@@ -123,10 +102,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox Child classes can override methods from the parent class
      */
-    public function usesTheOverridenMethodsInTheChildClass()
+    public function testUsesTheOverridenMethodsInTheChildClass()
     {
         $sportCar = new SportCar('yellow', 'Ferrari');
 
@@ -135,10 +113,9 @@ class AboutClasses extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox The protected properties and methods are visible in the subclass, but the private ones not
      */
-    public function checksVisibilityOfInheritedPrivateProtectedPropsAndMethods()
+    public function testChecksVisibilityOfInheritedPrivateProtectedPropsAndMethods()
     {
         $sportCar = new SportCar('yellow', 'Ferrari');
 

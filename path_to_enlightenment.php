@@ -2,6 +2,8 @@
 
 // Define the __ placeholder constant
 define('__', '__FILL_ME_IN__');
+define('____', !('__FILL_ME_IN__'));
+
 
 // Autoload Composer
 require_once __DIR__ . '/vendor/autoload.php';

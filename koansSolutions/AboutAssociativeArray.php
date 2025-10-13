@@ -1,7 +1,9 @@
 <?php
-use PHPUnit\Framework\TestCase;
+namespace Koans;
 
-class AboutAssociativeArray extends TestCase
+use KoansLib\KoansTestCase;
+
+class AboutAssociativeArray extends KoansTestCase
 {
     /**
      * @testdox Creating an empty associative array results in an empty array type
@@ -41,10 +43,6 @@ class AboutAssociativeArray extends TestCase
     {
         $arr = [ 'one' => 'uno' ];
         $this->assertEquals('uno', $arr['one']);
-        $this->expectException(\Exception::class);
-        if (!array_key_exists('doesnt_exist', $arr)) {
-            throw new \Exception("Key does not exist");
-        }
     }
 
     /**

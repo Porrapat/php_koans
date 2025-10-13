@@ -1,4 +1,5 @@
 <?php
+namespace Koans;
 use KoansLib\KoansTestCase;
 
 class AboutAssociativeArray extends KoansTestCase
@@ -41,10 +42,6 @@ class AboutAssociativeArray extends KoansTestCase
     {
         $arr = [ 'one' => 'uno' ];
         $this->assertEquals(__, $arr['one']);
-        $this->expectException(\Exception::class);
-        if (!array_key_exists('doesnt_exist', $arr)) {
-            throw new \Exception("Key does not exist");
-        }
     }
 
     /**

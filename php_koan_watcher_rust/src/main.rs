@@ -16,8 +16,16 @@ fn main() -> Result<()> {
     let mut watcher = RecommendedWatcher::new(tx, Config::default())?;
 
     watcher.watch(Path::new("koans"), RecursiveMode::Recursive)?;
-    watcher.watch(Path::new("phpunit.xml"), RecursiveMode::NonRecursive)?;
-    println!("👀 Watching for changes in /koans and phpunit.xml ...");
+    watcher.watch(Path::new("KoansLib"), RecursiveMode::Recursive)?;
+    watcher.watch(Path::new("koansSolutions"), RecursiveMode::Recursive)?;
+    watcher.watch(Path::new("path_to_enlightenment.php"), RecursiveMode::NonRecursive)?;
+    watcher.watch(Path::new("config_koans.txt"), RecursiveMode::NonRecursive)?;
+
+    println!("👀 Watching for changes in /koans /KoansLib /koansSolutions path_to_enlightenment.php config_koans.txt ...\n");
+
+    // Run tests immediately on startup
+    clear_screen();
+    run_php_koans();
 
     loop {
         match rx.recv_timeout(Duration::from_secs(1)) {
@@ -25,7 +33,8 @@ fn main() -> Result<()> {
                 for path in paths {
                     let file_name = path.file_name().and_then(|n| n.to_str());
                     let should_run = if let Some(ext) = path.extension() {
-                        ext == "php" || (ext == "xml" && file_name == Some("phpunit.xml"))
+                        ext == "php" 
+                        || (ext == "txt" && file_name == Some("config_koans.txt"))
                     } else {
                         false
                     };
@@ -77,14 +86,16 @@ fn clear_screen() {
 }
 
 fn run_php_koans() {
-    let status = Command::new("php")
+    let result = Command::new("php")
         .arg("path_to_enlightenment.php")
-        .status()
-        .expect("❌ Failed to run php");
+        .status();
 
-    if status.success() {
-        println!("Watching Koans...\n");
-    } else {
-        println!("Watching Koans... FAILED\n");
+    match result {
+        Ok(_) => {
+            println!("👀 Watching for changes...\n");
+        }
+        Err(e) => {
+            eprintln!("❌ Error running PHP: {:?}\n", e);
+        }
     }
 }

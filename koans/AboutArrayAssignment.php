@@ -1,5 +1,5 @@
 <?php
-
+namespace Koans;
 use KoansLib\KoansTestCase;
 
 class AboutArrayAssignment extends KoansTestCase

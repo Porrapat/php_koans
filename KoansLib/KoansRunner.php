@@ -8,12 +8,77 @@ class KoansRunner
     private $passedTests = 0;
     private $failedTests = 0;
     private $totalTests = 0;
+    private $totalTestsInProject = 0;
     private $firstFailure = null;
     private $currentKoan = null;
+    private $files = [];
+    private $configFile = 'config_koans.txt';
 
     public function __construct($koansPath = 'koans')
     {
         $this->koansPath = $koansPath;
+        $this->loadKoansFromConfig();
+    }
+
+    /**
+     * Load koan files from configuration file
+     */
+    private function loadKoansFromConfig()
+    {
+        $configPath = __DIR__ . '/../' . $this->configFile;
+        
+        if (!file_exists($configPath)) {
+            echo "⚠️  Warning: Configuration file '{$this->configFile}' not found. Using default koans.\n";
+            $this->loadDefaultKoans();
+            return;
+        }
+
+        $lines = file($configPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        
+        foreach ($lines as $line) {
+            // Trim whitespace
+            $line = trim($line);
+            
+            // Skip empty lines and comments (lines starting with #)
+            if (empty($line) || strpos($line, '#') === 0) {
+                continue;
+            }
+            
+            $this->files[] = $line;
+        }
+
+        // Remove duplicates while preserving order
+        $this->files = array_unique($this->files);
+        $this->files = array_values($this->files);
+    }
+
+    /**
+     * Load default koans if config file is not found
+     */
+    private function loadDefaultKoans()
+    {
+        $this->files = [
+            'koans/AboutAsserts.php',
+            'koans/AboutTrueAndFalse.php',
+            'koans/AboutVariables.php',
+            'koans/AboutControlStatements.php',
+            'koans/AboutIsEvenMiniProject.php',
+            'koans/AboutTriangleProject.php',
+            'koans/AboutStrings.php',
+            'koans/AboutStringManipulation.php',
+            'koans/AboutFizzBuzzProject.php',
+            'koans/AboutArrays.php',
+            'koans/AboutArrayAssignment.php',
+            'koans/AboutAssociativeArray.php',
+            'koans/AboutCallbackFunctions.php',
+            'koans/AboutClasses.php',
+            'koans/AboutObjects.php',
+            'koans/AboutNull.php',
+            'koans/AboutDataTypes.php',
+            'koans/AboutFunctions.php',
+            'koans/AboutRegularExpressions.php',
+            'koans/AboutDateTime.php'
+        ];
     }
 
     /**
@@ -21,6 +86,7 @@ class KoansRunner
      */
     public function run()
     {
+        $this->countAllTests();
         $this->printHeader();
 
         $koanFiles = $this->discoverKoans();
@@ -37,12 +103,28 @@ class KoansRunner
     }
 
     /**
+     * Count all test methods in the project
+     */
+    private function countAllTests()
+    {
+        $files = $this->files;
+        $totalTests = 0;
+
+        foreach ($files as $file) {
+            $content = file_get_contents($file);
+            preg_match_all('/public\s+function\s+(test\w+)\s*\(/', $content, $matches);
+            $totalTests += count($matches[1]);
+        }
+
+        $this->totalTestsInProject = $totalTests;
+    }
+
+    /**
      * Discover all koan files
      */
     private function discoverKoans()
     {
-        $files = glob($this->koansPath . '/About*.php');
-        sort($files);
+        $files = $this->files;
         return $files;
     }
 
@@ -65,6 +147,9 @@ class KoansRunner
             echo "⚠️  Warning: $className does not extend KoansTestCase\n";
             return;
         }
+
+        // Print the file name before running tests
+        echo "\n" . $this->colorize("File: " . basename($koanFile), 'cyan') . "\n";
 
         $methods = $koan->getTestMethods();
 
@@ -90,7 +175,20 @@ class KoansRunner
             $this->printSuccess($testDox);
         } catch (KoansAssertionException $e) {
             $this->failedTests++;
-            $this->printFailure($testDox, $e);
+            
+            // Get the actual line number where the assertion failed
+            $trace = $e->getTrace();
+            $testLine = $e->getLine();
+            
+            // Find the line in the test file (not in KoansTestCase)
+            foreach ($trace as $frame) {
+                if (isset($frame['file']) && basename($frame['file']) === $this->currentKoan . '.php') {
+                    $testLine = $frame['line'];
+                    break;
+                }
+            }
+            
+            $this->printFailure($testDox, $e, $testLine);
             
             if ($this->firstFailure === null) {
                 $this->firstFailure = [
@@ -99,12 +197,16 @@ class KoansRunner
                     'method' => $methodName,
                     'message' => $e->getMessage(),
                     'file' => $e->getFile(),
-                    'line' => $e->getLine()
+                    'line' => $testLine
                 ];
             }
         } catch (\Exception $e) {
             $this->failedTests++;
-            $this->printError($testDox, $e);
+            
+            // Get the actual line number where the error occurred
+            $testLine = $e->getLine();
+            
+            $this->printError($testDox, $e, $testLine);
             
             if ($this->firstFailure === null) {
                 $this->firstFailure = [
@@ -113,7 +215,7 @@ class KoansRunner
                     'method' => $methodName,
                     'message' => $e->getMessage(),
                     'file' => $e->getFile(),
-                    'line' => $e->getLine()
+                    'line' => $testLine
                 ];
             }
         }
@@ -151,17 +253,20 @@ class KoansRunner
     /**
      * Print failure message
      */
-    private function printFailure($testDox, $exception)
+    private function printFailure($testDox, $exception, $line)
     {
-        echo "  ✗ " . $this->colorize($testDox, 'red') . "\n";
+        echo "  ✗ " . $this->colorize($testDox, 'red');
+        echo " " . $this->colorize("(Line {$line})", 'yellow') . "\n";
+        echo "     " . $this->colorize($exception->getMessage(), 'yellow') . "\n";
     }
 
     /**
      * Print error message
      */
-    private function printError($testDox, $exception)
+    private function printError($testDox, $exception, $line)
     {
-        echo "  ⚠ " . $this->colorize($testDox . " (Error)", 'yellow') . "\n";
+        echo "  ⚠ " . $this->colorize($testDox . " (Error)", 'yellow');
+        echo " " . $this->colorize("(Line {$line})", 'yellow') . "\n";
     }
 
     /**
@@ -176,39 +281,20 @@ class KoansRunner
             // All tests passed!
             echo $this->colorize("🎉 Congratulations! All koans have been completed!", 'green') . "\n";
             echo $this->colorize("   You have reached enlightenment! 🧘‍♂️✨", 'green') . "\n";
-        } else {
-            // Show first failure
-            $failure = $this->firstFailure;
-            
-            echo $this->colorize("🔍 You have not yet reached enlightenment...", 'red') . "\n";
-            echo $this->colorize("   The answers you seek are within {$failure['koan']}", 'yellow') . "\n";
             echo "\n";
-            echo $this->colorize("📍 Failed Test:", 'red') . "\n";
-            echo "   {$failure['test']}\n";
-            echo "\n";
-            echo $this->colorize("💡 Hint:", 'yellow') . "\n";
-            echo "   {$failure['message']}\n";
-            echo "\n";
-            echo $this->colorize("📄 Location:", 'cyan') . "\n";
-            echo "   File: {$failure['file']}\n";
-            echo "   Line: {$failure['line']}\n";
-            echo "\n";
-            echo $this->colorize("🎯 What to do next:", 'yellow') . "\n";
-            echo "   1. Open the file mentioned above\n";
-            echo "   2. Find the test method: {$failure['method']}()\n";
-            echo "   3. Replace __ (double underscore) with the correct value\n";
-            echo "   4. Save the file and the tests will run automatically\n";
+            echo str_repeat("─", 64) . "\n";
         }
-
-        echo "\n";
-        echo str_repeat("─", 64) . "\n";
         
         $passedColor = $this->passedTests > 0 ? 'green' : 'white';
-        $failedColor = $this->failedTests > 0 ? 'red' : 'white';
+        $remainingTests = $this->totalTestsInProject - $this->passedTests;
         
-        echo "Tests: " . $this->colorize("{$this->passedTests} passed", $passedColor);
-        echo ", " . $this->colorize("{$this->failedTests} failed", $failedColor);
-        echo ", {$this->totalTests} total\n";
+        echo "Tests: " . $this->colorize("{$this->passedTests} passed!", $passedColor) . "\n";
+        
+        if ($this->totalTestsInProject > 0) {
+            $percentage = round(($this->passedTests / $this->totalTestsInProject) * 100, 1);
+            echo "Progress: {$this->passedTests}/{$this->totalTestsInProject} tests completed ({$percentage}%)";
+            echo " - " . $this->colorize("{$remainingTests} remaining", 'yellow') . "\n";
+        }
         echo "\n";
     }
 

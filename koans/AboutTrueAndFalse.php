@@ -4,7 +4,7 @@ namespace Koans;
 
 use KoansLib\KoansTestCase;
 
-class AboutTrueAndFalseTest extends KoansTestCase
+class AboutTrueAndFalse extends KoansTestCase
 {
     /**
      * @testdox true is treated as true

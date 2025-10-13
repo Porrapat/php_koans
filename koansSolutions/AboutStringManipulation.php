@@ -2,9 +2,9 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
-class AboutStringManipulation extends TestCase
+class AboutStringManipulation extends KoansTestCase
 {
     /**
      * @testdox A dot concatenates strings.

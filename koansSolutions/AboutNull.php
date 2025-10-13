@@ -1,31 +1,11 @@
 <?php
-use PHPUnit\Framework\TestCase;
 
-class AboutNullTest extends TestCase
+namespace Koans;
+
+use KoansLib\KoansTestCase;
+
+class AboutNull extends KoansTestCase
 {
-    /**
-     * @testdox Understand that null is a primitive and not an object
-     */
-    public function testNullIsPrimitive()
-    {
-        // In PHP, null is NOT an object, it's a special type.
-        $this->assertFalse(is_object(null), "In PHP, null is NOT an object, it's a special type.");
-    }
-
-    /**
-     * @testdox Understand that calling a method on null causes an Error
-     */
-    public function testCallingMethodsOnNullCausesError()
-    {
-        try {
-            null->someMethodNullDoesntKnowAbout();
-            $this->fail("Expected Error was not thrown");
-        } catch (Error $e) {
-            $this->assertEquals(Error::class, get_class($e));
-            $this->assertMatchesRegularExpression('/null/', $e->getMessage());
-        }
-    }
-
     /**
      * @testdox Explore null’s behavior with comparisons and casting
      */

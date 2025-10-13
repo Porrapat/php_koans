@@ -2,16 +2,15 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 
 // Resources for learning about Functions => https://www.w3schools.com/php/php_functions.asp
-class AboutFunctions extends TestCase
+class AboutFunctions extends KoansTestCase
 {
     /**
-     * @test
      * @testdox Functions can be defined using the 'function' keyword
      */
-    public function usesFunctionKeywordToDefineFunctions()
+    public function testUsesFunctionKeywordToDefineFunctions()
     {
         function sayHello(): string
         {
@@ -22,10 +21,9 @@ class AboutFunctions extends TestCase
     }
 
     /**
-     * @test
      * @testdox Functions can have arguments
      */
-    public function usesFunctionsArgumentsToPassInformationToFunctions()
+    public function testUsesFunctionsArgumentsToPassInformationToFunctions()
     {
         function add($variableOne, $variableTwo): int
         {
@@ -36,10 +34,9 @@ class AboutFunctions extends TestCase
     }
 
     /**
-     * @test
      * @testdox Functions can have default argument values
      */
-    public function usesDefaultArgumentsValues()
+    public function testUsesDefaultArgumentsValues()
     {
         function greet($name = 'Guest'): string
         {
@@ -54,10 +51,9 @@ class AboutFunctions extends TestCase
     }
 
     /**
-     * @test
      * @testdox Functions can return multiple values using an array or list
      */
-    public function usesMultipleReturnToReturnMultipleValues()
+    public function testUsesMultipleReturnToReturnMultipleValues()
     {
         function getFullName(): array
         {
@@ -74,10 +70,9 @@ class AboutFunctions extends TestCase
     }
 
     /**
-     * @test
      * @testdox Functions can be recursive
      */
-    public function usesRecursionToCallTheFunctionInsideIt()
+    public function testUsesRecursionToCallTheFunctionInsideIt()
     {
         function factorial($number): int
         {

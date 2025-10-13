@@ -2,17 +2,16 @@
 
 namespace Koans;
 
-use PHPUnit\Framework\TestCase;
+use KoansLib\KoansTestCase;
 use stdClass;
 
 // Resources for learning about Data Types => https://www.w3schools.com/php/php_datatypes.asp
-class AboutDataTypes extends TestCase
+class AboutDataTypes extends KoansTestCase
 {
     /**
-     * @test
      * @testdox A string is a data type that is used to represent text
      */
-    public function createsStringUsingSingleOrDoubleQuotes()
+    public function testCreatesStringUsingSingleOrDoubleQuotes()
     {
         $string = '3';
 
@@ -20,10 +19,9 @@ class AboutDataTypes extends TestCase
     }
 
     /**
-     * @test
      * @testdox Integers are numbers without decimals
      */
-    public function createsIntUsingNumbersWithoutDecimals()
+    public function testCreatesIntUsingNumbersWithoutDecimals()
     {
         $integer = 3;
 
@@ -31,10 +29,9 @@ class AboutDataTypes extends TestCase
     }
 
     /**
-     * @test
      * @testdox Floats are numbers with decimal points
      */
-    public function createsFloatUsingNumbersWithDecimalPoints()
+    public function testCreatesFloatUsingNumbersWithDecimalPoints()
     {
         $float = 1.1;
 
@@ -42,10 +39,9 @@ class AboutDataTypes extends TestCase
     }
 
     /**
-     * @test
      * @testdox Booleans represent true or false values
      */
-    public function createsBooleansUsingTrueOrFalse()
+    public function testCreatesBooleansUsingTrueOrFalse()
     {
         $booleanTrue = true;
         $booleanFalse = false;
@@ -57,10 +53,9 @@ class AboutDataTypes extends TestCase
     }
 
     /**
-     * @test
      * @testdox Arrays can hold multiple values
      */
-    public function createsArrayUsingBracketsOrArrayKeyword()
+    public function testCreatesArrayUsingBracketsOrArrayKeyword()
     {
         $array = [1, 2, 3];
 
@@ -69,10 +64,9 @@ class AboutDataTypes extends TestCase
     }
 
     /**
-     * @test
      * @testdox Objects are instances of classes
      */
-    public function createsObjectsUsingNewKeyword()
+    public function testCreatesObjectsUsingNewKeyword()
     {
         $object = new stdClass();
 
@@ -80,10 +74,9 @@ class AboutDataTypes extends TestCase
     }
 
     /**
-     * @test
      * @testdox Null represents the absence of a value
      */
-    public function createNullUsingNullKeyword()
+    public function testCreateNullUsingNullKeyword()
     {
         $null = null;
 
@@ -91,10 +84,9 @@ class AboutDataTypes extends TestCase
     }
 
     /**
-     * @test
      * @testdox Resources represent external resources (e.g., database connections, files...)
      */
-    public function checksIfOurComposerFileIsAResource()
+    public function testChecksIfOurComposerFileIsAResource()
     {
         $resource = fopen('composer.json', 'r');
 

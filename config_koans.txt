@@ -1,0 +1,25 @@
+# PHP Koans Configuration File
+# List the koan files in the order you want them to run
+# Lines starting with # are comments and will be ignored
+# You can comment out a koan by adding # at the beginning of the line
+
+koans/AboutAsserts.php
+koans/AboutTrueAndFalse.php
+koans/AboutVariables.php
+koans/AboutControlStatements.php
+koans/AboutIsEvenMiniProject.php
+koans/AboutTriangleProject.php
+koans/AboutStrings.php
+koans/AboutStringManipulation.php
+koans/AboutFizzBuzzProject.php
+koans/AboutArrays.php
+koans/AboutArrayAssignment.php
+koans/AboutAssociativeArray.php
+koans/AboutCallbackFunctions.php
+koans/AboutClasses.php
+koans/AboutObjects.php
+koans/AboutNull.php
+koans/AboutDataTypes.php
+koans/AboutFunctions.php
+koans/AboutRegularExpressions.php
+koans/AboutDateTime.php

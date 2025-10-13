@@ -8,10 +8,9 @@ use KoansLib\KoansTestCase;
 class AboutRegularExpressions extends KoansTestCase
 {
     /**
-     * @test
      * @testdox preg_match tells you if a string contains matches of a pattern.
      */
-    public function usesPregMatchToFindPatternsInAString()
+    public function testUsesPregMatchToFindPatternsInAString()
     {
         $str = "PHP Koans have more Koans";
         $pattern = "/Koans/i";
@@ -20,10 +19,9 @@ class AboutRegularExpressions extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox preg_match_all tells you how many matches were found for a pattern in a string
      */
-    public function usesPregMatchAllToKnowHowManyPatternsThereAreInAString()
+    public function testUsesPregMatchAllToKnowHowManyPatternsThereAreInAString()
     {
         $str = "Rain in SPAIN falls mainly on the plains.";
         $pattern = "/ain/i";
@@ -32,10 +30,9 @@ class AboutRegularExpressions extends KoansTestCase
     }
 
     /**
-     * @test
      * @testdox preg_replace replaces all of the matches of the pattern in a string with another string
      */
-    public function usesPregReplaceToReplaceAllTheMatchesInAStringWithAnotherString()
+    public function testUsesPregReplaceToReplaceAllTheMatchesInAStringWithAnotherString()
     {
         $str = "This is the python Koans, python Rules!.";
         $pattern = "";
