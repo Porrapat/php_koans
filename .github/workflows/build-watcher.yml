@@ -5,9 +5,9 @@ permissions:
 
 on:
   push:
-    branches: [ master, main, development, development-rust ]
+    branches: [ development-rust ]
   pull_request:
-    branches: [ master, main, development, development-rust ]
+    branches: [ development-rust ]
   workflow_dispatch:
 
 jobs:
