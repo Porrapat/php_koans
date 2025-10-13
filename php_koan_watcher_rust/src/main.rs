@@ -2,7 +2,7 @@ use notify::{Config, RecommendedWatcher, RecursiveMode, Result, Watcher, Event};
 use std::sync::mpsc::channel;
 use std::process::Command;
 use std::env;
-use std::time::Duration;
+use std::time::{Duration, Instant};
 use std::path::{Path, PathBuf};
 
 fn main() -> Result<()> {
@@ -27,27 +27,35 @@ fn main() -> Result<()> {
     clear_screen();
     run_php_koans();
 
+    let mut last_run = Instant::now();
+
     loop {
         match rx.recv_timeout(Duration::from_secs(1)) {
             Ok(Ok(Event { paths, .. })) => {
                 for path in paths {
                     let file_name = path.file_name().and_then(|n| n.to_str());
                     let should_run = if let Some(ext) = path.extension() {
-                        ext == "php" 
-                        || (ext == "txt" && file_name == Some("config_koans.txt"))
+                        ext == "php" || (ext == "txt" && file_name == Some("config_koans.txt"))
                     } else {
                         false
                     };
 
                     if should_run {
+                        if last_run.elapsed() < Duration::from_secs(2) {
+                            // 🔁 ignore event that happens too soon after previous run
+                            continue;
+                        }
+
                         println!("📄 File changed: {:?}", path);
                         clear_screen();
                         run_php_koans();
+
+                        last_run = Instant::now();
                     }
                 }
             }
             Ok(Err(e)) => eprintln!("watch error: {:?}", e),
-            Err(_) => {} // timeout
+            Err(_) => {}
         }
     }
 }
