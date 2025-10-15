@@ -23,3 +23,4 @@ koans/AboutDataTypes.php
 koans/AboutFunctions.php
 koans/AboutRegularExpressions.php
 koans/AboutDateTime.php
+koans/AboutExceptions.php

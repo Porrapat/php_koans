@@ -169,8 +169,33 @@ class KoansRunner
         $this->totalTests++;
         $testDox = $koan->getTestDox($methodName);
 
+        // Reset exception expectations before each test
+        $koan->expectedException = null;
+        $koan->expectedExceptionMessage = null;
+
         try {
             $koan->$methodName();
+            
+            // Check if an exception was expected but not thrown
+            if ($koan->expectedException !== null) {
+                $this->failedTests++;
+                $message = "Failed asserting that exception of type {$koan->expectedException} was thrown.";
+                $e = new KoansAssertionException($message);
+                $this->printFailure($testDox, $e, 0);
+                
+                if ($this->firstFailure === null) {
+                    $this->firstFailure = [
+                        'koan' => $this->currentKoan,
+                        'test' => $testDox,
+                        'method' => $methodName,
+                        'message' => $message,
+                        'file' => '',
+                        'line' => 0
+                    ];
+                }
+                return;
+            }
+            
             $this->passedTests++;
             $this->printSuccess($testDox);
         } catch (KoansAssertionException $e) {
@@ -201,22 +226,72 @@ class KoansRunner
                 ];
             }
         } catch (\Exception $e) {
-            $this->failedTests++;
-            
-            // Get the actual line number where the error occurred
-            $testLine = $e->getLine();
-            
-            $this->printError($testDox, $e, $testLine);
-            
-            if ($this->firstFailure === null) {
-                $this->firstFailure = [
-                    'koan' => $this->currentKoan,
-                    'test' => $testDox,
-                    'method' => $methodName,
-                    'message' => $e->getMessage(),
-                    'file' => $e->getFile(),
-                    'line' => $testLine
-                ];
+            // Check if this exception was expected
+            if ($koan->expectedException !== null) {
+                $exceptionClass = get_class($e);
+                
+                // Check if the exception class matches
+                if (!($e instanceof $koan->expectedException)) {
+                    $this->failedTests++;
+                    $message = "Failed asserting that exception of type {$exceptionClass} matches expected exception type {$koan->expectedException}.";
+                    $assertionException = new KoansAssertionException($message);
+                    $this->printFailure($testDox, $assertionException, $e->getLine());
+                    
+                    if ($this->firstFailure === null) {
+                        $this->firstFailure = [
+                            'koan' => $this->currentKoan,
+                            'test' => $testDox,
+                            'method' => $methodName,
+                            'message' => $message,
+                            'file' => $e->getFile(),
+                            'line' => $e->getLine()
+                        ];
+                    }
+                    return;
+                }
+                
+                // Check if the exception message matches (if specified)
+                if ($koan->expectedExceptionMessage !== null && $e->getMessage() !== $koan->expectedExceptionMessage) {
+                    $this->failedTests++;
+                    $message = "Failed asserting that exception message '{$e->getMessage()}' matches expected message '{$koan->expectedExceptionMessage}'.";
+                    $assertionException = new KoansAssertionException($message);
+                    $this->printFailure($testDox, $assertionException, $e->getLine());
+                    
+                    if ($this->firstFailure === null) {
+                        $this->firstFailure = [
+                            'koan' => $this->currentKoan,
+                            'test' => $testDox,
+                            'method' => $methodName,
+                            'message' => $message,
+                            'file' => $e->getFile(),
+                            'line' => $e->getLine()
+                        ];
+                    }
+                    return;
+                }
+                
+                // Exception matched expectations - test passed
+                $this->passedTests++;
+                $this->printSuccess($testDox);
+            } else {
+                // Exception was not expected - this is an error
+                $this->failedTests++;
+                
+                // Get the actual line number where the error occurred
+                $testLine = $e->getLine();
+                
+                $this->printError($testDox, $e, $testLine);
+                
+                if ($this->firstFailure === null) {
+                    $this->firstFailure = [
+                        'koan' => $this->currentKoan,
+                        'test' => $testDox,
+                        'method' => $methodName,
+                        'message' => $e->getMessage(),
+                        'file' => $e->getFile(),
+                        'line' => $testLine
+                    ];
+                }
             }
         }
     }

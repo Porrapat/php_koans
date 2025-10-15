@@ -9,6 +9,25 @@ abstract class KoansTestCase
     protected static $totalTests = 0;
     protected static $firstFailure = null;
 
+    public $expectedException = null;
+    public $expectedExceptionMessage = null;
+
+    /**
+     * Expect that an exception of a specific class will be thrown
+     */
+    protected function expectException($exceptionClass)
+    {
+        $this->expectedException = $exceptionClass;
+    }
+
+    /**
+     * Expect that an exception with a specific message will be thrown
+     */
+    protected function expectExceptionMessage($message)
+    {
+        $this->expectedExceptionMessage = $message;
+    }
+
     /**
      * Assert that a condition is true
      */
