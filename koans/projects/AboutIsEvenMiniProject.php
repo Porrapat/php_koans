@@ -5,7 +5,7 @@ use KoansLib\KoansTestCase;
 
 function is_even(int $number): bool
 {
-    return __;
+    return ____;
 }
 
 /**

@@ -7,11 +7,11 @@ koans/AboutAsserts.php
 koans/AboutTrueAndFalse.php
 koans/AboutVariables.php
 koans/AboutControlStatements.php
-koans/AboutIsEvenMiniProject.php
-koans/AboutTriangleProject.php
+koans/projects/AboutIsEvenMiniProject.php
+koans/projects/AboutTriangleProject.php
 koans/AboutStrings.php
 koans/AboutStringManipulation.php
-koans/AboutFizzBuzzProject.php
+koans/projects/AboutFizzBuzzProject.php
 koans/AboutArrays.php
 koans/AboutArrayAssignment.php
 koans/AboutAssociativeArray.php
@@ -20,7 +20,7 @@ koans/AboutClasses.php
 koans/AboutObjects.php
 koans/AboutNull.php
 koans/AboutDataTypes.php
+koans/AboutExceptions.php
 koans/AboutFunctions.php
 koans/AboutRegularExpressions.php
 koans/AboutDateTime.php
-koans/AboutExceptions.php

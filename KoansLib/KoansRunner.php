@@ -62,11 +62,11 @@ class KoansRunner
             'koans/AboutTrueAndFalse.php',
             'koans/AboutVariables.php',
             'koans/AboutControlStatements.php',
-            'koans/AboutIsEvenMiniProject.php',
-            'koans/AboutTriangleProject.php',
+            'koans/projects/AboutIsEvenMiniProject.php',
+            'koans/projects/AboutTriangleProject.php',
             'koans/AboutStrings.php',
             'koans/AboutStringManipulation.php',
-            'koans/AboutFizzBuzzProject.php',
+            'koans/projects/AboutFizzBuzzProject.php',
             'koans/AboutArrays.php',
             'koans/AboutArrayAssignment.php',
             'koans/AboutAssociativeArray.php',
@@ -75,6 +75,7 @@ class KoansRunner
             'koans/AboutObjects.php',
             'koans/AboutNull.php',
             'koans/AboutDataTypes.php',
+            'koans/AboutExceptions.php',
             'koans/AboutFunctions.php',
             'koans/AboutRegularExpressions.php',
             'koans/AboutDateTime.php'
@@ -133,6 +134,14 @@ class KoansRunner
      */
     private function runKoan($koanFile)
     {
+        // Require the file to ensure the class is loaded (handles subdirectories)
+        if (file_exists($koanFile)) {
+            require_once $koanFile;
+        } else {
+            echo "⚠️  Warning: File $koanFile not found\n";
+            return;
+        }
+        
         $className = $this->getClassNameFromFile($koanFile);
         
         if (!class_exists($className)) {
@@ -140,7 +149,8 @@ class KoansRunner
             return;
         }
 
-        $this->currentKoan = basename($koanFile, '.php');
+        // Store the full relative path for better tracking
+        $this->currentKoan = $koanFile;
         $koan = new $className();
 
         if (!($koan instanceof KoansTestCase)) {
@@ -207,7 +217,7 @@ class KoansRunner
             
             // Find the line in the test file (not in KoansTestCase)
             foreach ($trace as $frame) {
-                if (isset($frame['file']) && basename($frame['file']) === $this->currentKoan . '.php') {
+                if (isset($frame['file']) && $this->isSameFile($frame['file'], $this->currentKoan)) {
                     $testLine = $frame['line'];
                     break;
                 }
@@ -303,6 +313,23 @@ class KoansRunner
     {
         $baseName = basename($file, '.php');
         return "Koans\\$baseName";
+    }
+
+    /**
+     * Check if two file paths point to the same file
+     */
+    private function isSameFile($file1, $file2)
+    {
+        // Normalize paths for comparison
+        $file1 = str_replace('\\', '/', $file1);
+        $file2 = str_replace('\\', '/', $file2);
+        
+        // Get the basename to compare
+        $base1 = basename($file1);
+        $base2 = basename($file2);
+        
+        // Check if filenames match and if file1 ends with file2 path
+        return $base1 === $base2 && (strpos($file1, $file2) !== false || strpos($file2, $file1) !== false);
     }
 
     /**

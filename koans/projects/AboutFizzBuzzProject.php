@@ -1,6 +1,7 @@
 <?php
 
 namespace Koans;
+
 use KoansLib\KoansTestCase;
 
 // FizzBuzz Project

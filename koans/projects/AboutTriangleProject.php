@@ -1,5 +1,6 @@
 <?php
 namespace Koans;
+
 use KoansLib\KoansTestCase;
 
 // Triangle Project Code.
