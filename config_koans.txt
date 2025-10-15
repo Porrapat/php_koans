@@ -12,9 +12,14 @@ koans/projects/AboutTriangleProject.php
 koans/AboutStrings.php
 koans/AboutStringManipulation.php
 koans/projects/AboutFizzBuzzProject.php
+koans/projects/AboutPalindromeEasyProject.php
+koans/projects/AboutPalindromeHardProject.php
 koans/AboutArrays.php
 koans/AboutArrayAssignment.php
 koans/AboutAssociativeArray.php
+koans/projects/AboutConvertToRomanEasyProject.php
+koans/projects/AboutConvertToRomanMediumProject.php
+koans/projects/AboutConvertToRomanHardProject.php
 koans/AboutCallbackFunctions.php
 koans/AboutClasses.php
 koans/AboutObjects.php
