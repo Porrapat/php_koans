@@ -57,7 +57,7 @@ php path_to_enlightenment.php
 
 2. Config Koans
 
-![img2.png](screenshots/02_configuration_php_koans.png)
+![img2.png](screenshots/c0-config-koans.png)
 
 3. Run Koans
 
@@ -97,6 +97,14 @@ Just run this command, it will use Rust built binary to watch /koans /KoansLib /
 ./watcher-macOS                 # For macOS
 ./watcher-Linux                 # For Linux
 ```
+
+1. Example type ./watcher-Windows.exe
+
+![img1.png](screenshots/x0-watch-start-koans.png)
+
+2. The Koans will refresh automatically when edit the files and saved.
+
+![img2.png](screenshots/x1-watch-koans-win.png)
 
 ### License
 

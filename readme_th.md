@@ -59,7 +59,7 @@ php path_to_enlightenment.php
 
 2. ตั้งค่า Koans
 
-![img2.png](screenshots/02_configuration_php_koans.png)
+![img2.png](screenshots/c0-config-koans.png)
 
 3. รัน Koans
 
@@ -100,6 +100,14 @@ php spark test      # CodeIgniter 4-style
 ./watcher-macOS                 # For macOS
 ./watcher-Linux                 # For Linux
 ```
+
+1. ตัวอย่างแค่พิมพ์คำสั่ง ./watcher-Windows.exe
+
+![img1.png](screenshots/x0-watch-start-koans.png)
+
+2. Koans ทั้งหมดจะ Refresh อัตโนมัติเมื่อมีการแก้ไฟล์แล้วเซฟ
+
+![img2.png](screenshots/x1-watch-koans-win.png)
 
 ### สัญญาอนุญาต (License)
 
