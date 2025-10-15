@@ -8,6 +8,8 @@
 
 > _โปรเจกต์นี้ได้รับแรงบันดาลใจจาก Ruby Koans_
 
+![Introduction](screenshots/introduction.gif)
+
 ## 🌐 ภาษาที่มีให้เลือก
 
 - 🇺🇸 [English](readme.md)

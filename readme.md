@@ -8,6 +8,8 @@ Testing is essential in your quest to learn and do great things in PHP.
 
 > _This project is inspired by Ruby Koans._
 
+![Introduction](screenshots/introduction.gif)
+
 ## 🌐 Available Languages
 
 - 🇺🇸 [English](readme.md)
