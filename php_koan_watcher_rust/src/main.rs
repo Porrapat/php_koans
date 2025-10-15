@@ -6,7 +6,7 @@ use std::time::{Duration, Instant};
 use std::path::{Path, PathBuf};
 
 fn main() -> Result<()> {
-    // 🧭 หารากของโปรเจกต์
+    // 🧭 Find the root of the project
     let root = find_project_root().expect("❌ Could not locate PHP Koans root folder");
     env::set_current_dir(&root)?;
     println!("📂 Working in project root: {:?}", env::current_dir()?);
@@ -61,7 +61,7 @@ fn main() -> Result<()> {
 }
 
 
-// ✅ ฟังก์ชันนี้จะไล่ย้อนจาก binary จนเจอ root ของ PHP Koans
+// ✅ This function recursively walks upward from the binary’s directory until it finds the root of the PHP Koans project
 fn find_project_root() -> Option<PathBuf> {
     let mut path = env::current_exe().ok()?;
 

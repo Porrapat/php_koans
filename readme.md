@@ -106,6 +106,15 @@ Just run this command, it will use Rust built binary to watch /koans /KoansLib /
 
 ![img2.png](screenshots/x1-watch-koans-win.png)
 
+### About Rust Watcher
+
+I found that Rust is good for write this watcher task. You must install Rust compiler. You can run it by
+
+```bash
+cd php_koan_watcher_rust
+cargo run
+```
+
 ### License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

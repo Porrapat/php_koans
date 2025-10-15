@@ -109,6 +109,15 @@ php spark test      # CodeIgniter 4-style
 
 ![img2.png](screenshots/x1-watch-koans-win.png)
 
+### เกี่ยวกับ Rust Watcher
+
+ผมพบว่าภาษา Rust นั้นดีสำหรับเขียน watcher คุณต้องติดตั้ง Rust Compiler ก่อน จากนั้นคุณสามารถรันมันได้ด้วยคำสั่ง
+
+```bash
+cd php_koan_watcher_rust
+cargo run
+```
+
 ### สัญญาอนุญาต (License)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
