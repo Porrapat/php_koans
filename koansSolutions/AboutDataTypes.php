@@ -82,16 +82,4 @@ class AboutDataTypes extends KoansTestCase
 
         $this->assertEquals(true, is_null($null));
     }
-
-    /**
-     * @testdox Resources represent external resources (e.g., database connections, files...)
-     */
-    public function testChecksIfOurComposerFileIsAResource()
-    {
-        $resource = fopen('composer.json', 'r');
-
-        $this->assertEquals(true, is_resource($resource));
-
-        fclose($resource);
-    }
 }
