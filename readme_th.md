@@ -30,9 +30,9 @@ Koans นี้ได้รับแรงบันดาลใจมาจา�
 
 ## การติดตั้ง PHP
 
-หากคุณยังไม่มี **PHP** และ **Composer** ติดตั้งไว้ในเครื่อง  
+หากคุณยังไม่มี **PHP** ติดตั้งไว้ในเครื่อง  
 สามารถเข้าไปดูวิธีติดตั้งสำหรับแต่ละระบบปฏิบัติการได้ที่ [php.net](https://www.php.net)  
-เพื่อใช้งาน Koans ได้ คุณต้องติดตั้ง **PHP** และ **Composer** ให้เรียบร้อยก่อน
+เพื่อใช้งาน Koans ได้ คุณต้องติดตั้ง **PHP** ให้เรียบร้อยก่อน
 
 ตรวจสอบว่าเครื่องคุณติดตั้งถูกต้องแล้วหรือยัง:
 
@@ -40,18 +40,16 @@ Koans นี้ได้รับแรงบันดาลใจมาจา�
 
 ```bash
 php -v
-composer --version
 ```
 
 ### เริ่มต้นใช้งาน:
 
-ให้ดูไฟล์ `phpunit.xml` แล้วทำการ uncomment โจทย์แต่ละข้อออก โดยเริ่มจาก `AboutAsserts`  
+ให้ดูไฟล์ `config_koans.txt` แล้วทำการ uncomment โจทย์แต่ละข้อออก โดยเริ่มจาก `AboutAsserts`  
 ภาพด้านล่างจะแสดงวิธีการทำแต่ละขั้นตอน
 
 ```bash
 git clone https://github.com/Porrapat/php_koans.git
 cd php_koans
-composer install
 php path_to_enlightenment.php
 ```
 
