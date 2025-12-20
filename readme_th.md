@@ -79,14 +79,13 @@ php path_to_enlightenment.php
 **ผู้เขียน**: ปรพัฒน์ เพชรดำรงค์สกุล <<porrapat.cpe20@gmail.com>>  
 **ขับเคลื่อนโดย**: จีจี้ หรือที่รู้จักกันในชื่อ ChatGPT 😄  
 **แจ้งปัญหาได้ที่**: [GitHub Issues](https://github.com/Porrapat/php_koans/issues)  
-**ความต้องการของระบบ**: PHP 7.4.x ขึ้นไป และ Composer เวอร์ชันใดก็ได้ที่เป็นเวอร์ชันล่าสุด
+**ความต้องการของระบบ**: PHP 7.4.x ขึ้นไป
 
 ---
 
 ### คำสั่งทางเลือกในการรัน Koans
 
 ```bash
-composer test       # modern PHP style
 php artisan test    # Laravel-style
 php spark test      # CodeIgniter 4-style
 ```
