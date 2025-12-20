@@ -1,0 +1,11 @@
+{
+    "name": "porrapat/php_koans",
+    "version": "1.3.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Porrapat Petchdamrongskul",
+            "email": "porrapat.cpe20@gmail.com"
+        }
+    ]
+}
