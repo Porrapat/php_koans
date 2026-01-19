@@ -117,6 +117,18 @@ cd php_koan_watcher_rust
 cargo run
 ```
 
+### AI ที่ใช้
+
+ผมใช้ AI ช่วยเขียนหลายตัว:
+
+- **ChatGPT**  
+  สำหรับไอเดีย แรงบันดาลใจ คุยเกี่ยวกับคอนเซ็ปต์ต่างๆ และ แปลง Koans จากภาษาโปรแกรมอื่นๆ เบื้องต้น
+
+- **Claude (ผ่าน OpenRouter, VSCode + Cline)**  
+  ใช้เป็นตัว Coding หลัก และ ใช้สร้างบล็อกตัวอย่างสำหรับเอกสารเช่น Readme.md
+
+ผลลัพธ์ทั้งหมดที่เกิดจาก AI ผมต้องรีวิว และ ทดสอบ หรือเขียนเชื่อมต่อด้วยตัวผมเอง
+
 ### สัญญาอนุญาต (License)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

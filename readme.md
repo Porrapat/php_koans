@@ -114,6 +114,18 @@ cd php_koan_watcher_rust
 cargo run
 ```
 
+### AI Tools Used
+
+I use multiple AI tools:
+
+- **ChatGPT**  
+  Used for ideas, inspiration, conceptual discussions, converting koans from others programming language.
+
+- **Claude (via OpenRouter, VSCode + Cline)**  
+  Used as the primary coding assistant and generated some document block for Readme.md file.
+
+All outputs from AI tools were reviewed, tested, and manually integrated by me.
+
 ### License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
